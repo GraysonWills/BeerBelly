@@ -1,0 +1,11 @@
+Beer
+Brandy
+Cider
+Gin
+Mead
+Rum
+Sake
+Tequila
+Vodka
+Whiskey
+Wine
