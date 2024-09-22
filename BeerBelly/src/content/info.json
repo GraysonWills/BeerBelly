@@ -1,0 +1,23 @@
+{
+    "choose": {
+      "description": "Choose a drink we'd think\nyou like based on a selection\nof different filters, such as taste,\nfruitiness and more!",
+      "image": "../assets/LandingPage/img/flight.jpg"
+    },
+    "find": {
+      "description": "Find The Most Popular\nSpots in Town and\nDiscover Daily Specials\nFor Your Enjoyment!",
+      "image": "../assets/LandingPage/img/flight2.jpg"
+    },
+    "locate": {
+      "description": "Locate Your Nearest\nBrewery With Our\nState-Of-The-Art\nLocation Service!",
+      "image": "../assets/LandingPage/img/single.jpg"
+    },
+    "craft": {
+      "description": "Learn How To Craft\nYour Own Delicious\nBeverage With Our\nAlchemy System!",
+      "image": "../assets/LandingPage/img/draught.jpg"
+    },
+    "mix": {
+      "description": "See The Ingredients You\nNeed to Make Your\nFavorite Cocktails!",
+      "image": "../assets/LandingPage/img/Ingredients.jpg"
+    }
+  }
+  

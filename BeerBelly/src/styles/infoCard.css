@@ -1,0 +1,55 @@
+/* InfoCard container */
+.info-card {
+    position: relative;
+    width: 100%; /* Span the entire width of the page */
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 10px solid #9E4113;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Ensure text inside is center-aligned */
+}
+
+/* The filling effect (starts from bottom and grows upwards) */
+.info-card::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(251, 177, 23, 0); /* Initially fully transparent */
+    transform: translateY(100%); /* Initially hidden */
+    transition: transform 1s ease, background-color 1s ease; /* Smooth transition effect */
+}
+
+/* Hovered state */
+.info-card.hovered::before {
+    transform: translateY(0); /* Fills up from bottom to top */
+    background-color: rgba(251, 177, 23, 0.71); /* 71% opacity after hover */
+}
+
+/* Text that appears after the fill animation */
+.info-card-text {
+    position: absolute;
+    width: 80%; /* Adjust width to center the text more precisely */
+    color: #9E4113;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    white-space: pre-line; /* Preserve new lines from JSON */
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 1s ease; /* Text fade-in effect */
+}
+
+/* Show text when hovered */
+.info-card.hovered .info-card-text {
+    opacity: 1;
+}
