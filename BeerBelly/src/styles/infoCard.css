@@ -46,7 +46,7 @@
     text-align: center;
     padding: 20px;
     opacity: 0;
-    transition: opacity 1s ease; /* Text fade-in effect */
+    transition: opacity 1s ease 1s; /* Text fade-in effect with a 1s delay */
 }
 
 /* Show text when hovered */

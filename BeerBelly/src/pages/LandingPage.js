@@ -9,13 +9,10 @@ const LandingPage = () => {
     <div>
       <CustomNavbar />
       <Hero />
-    
-        <div className="card-container">
-          <InfoCard descriptor="choose" data={data} />
-          <InfoCard descriptor="find" data={data} />
-          <InfoCard descriptor="locate" data={data} />
-          <InfoCard descriptor="craft" data={data} />
-          <InfoCard descriptor="mix" data={data} />
+      <div className="card-container">
+        {Object.keys(data).map((key) => (
+          <InfoCard key={key} descriptor={key} data={data} />
+        ))}
       </div>
     </div>
   );
