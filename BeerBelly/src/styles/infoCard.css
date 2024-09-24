@@ -1,18 +1,17 @@
 /* InfoCard container */
 .info-card {
     position: relative;
-    width: 100%; /* Span the entire width of the page */
+    width: 100%;
     height: 400px;
     background-size: cover;
     background-position: center;
     border-bottom: 10px solid #9E4113;
     overflow: hidden;
     cursor: pointer;
-    transition: background-color 0.5s ease;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    text-align: center; /* Ensure text inside is center-aligned */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 /* The filling effect (starts from bottom and grows upwards) */
@@ -23,33 +22,61 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(251, 177, 23, 0); /* Initially fully transparent */
-    transform: translateY(100%); /* Initially hidden */
-    transition: transform 1s ease, background-color 1s ease; /* Smooth transition effect */
+    background-color: rgba(251, 177, 23, 0.71);
+    transform: translateY(100%);
+    transition: transform 1s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+    border-radius: 50% 50% 0 0 / 10% 10% 0 0;
 }
 
 /* Hovered state */
-.info-card.hovered::before {
-    transform: translateY(0); /* Fills up from bottom to top */
-    background-color: rgba(251, 177, 23, 0.71); /* 71% opacity after hover */
+.info-card:hover::before {
+    transform: translateY(0);
+    border-radius: 0;
 }
 
 /* Text that appears after the fill animation */
 .info-card-text {
     position: absolute;
-    width: 80%; /* Adjust width to center the text more precisely */
+    width: 80%;
     color: #9E4113;
     font-family: 'Segoe UI', sans-serif;
     font-size: 24px;
     font-weight: bold;
-    white-space: pre-line; /* Preserve new lines from JSON */
+    white-space: pre-line;
     text-align: center;
     padding: 20px;
     opacity: 0;
-    transition: opacity 1s ease 1s; /* Text fade-in effect with a 1s delay */
+    transform: translateY(100%);
+    transition: opacity 0.5s ease, transform 1s cubic-bezier(0.45, 0.05, 0.55, 0.95);
 }
 
 /* Show text when hovered */
-.info-card.hovered .info-card-text {
+.info-card:hover .info-card-text {
     opacity: 1;
+    transform: translateY(0);
+}
+/* Disable animation and show content for phone-sized windows */
+@media (max-width: 600px) {
+    .info-card::before,
+    .info-card::after,
+    .info-card-text {
+        animation: none;
+        transition: none;
+    }
+
+    .info-card::before {
+        opacity: 1;
+        transform: none;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+        background-color: rgba(251, 177, 23, 0.71);
+    }
+
+    .info-card-text {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
