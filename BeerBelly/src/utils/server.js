@@ -9,8 +9,8 @@
     provider: 'openstreetmap',
     httpAdapter: 'axios',
     axios: axios.create({
-      timeout: 5000,
-      retries: 3,
+      timeout: 10000,
+      retries: 5,
       retryDelay: 1000
     })
   };
