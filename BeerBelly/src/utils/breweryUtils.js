@@ -2,7 +2,7 @@ const MILES_TO_METERS = 1609.34;
 
 export const fetchNearbyBreweries = async (lat, lon, radius = 20) => {
   const radiusInMeters = radius * MILES_TO_METERS;
-  const url = `https://api.openbrewerydb.org/breweries?by_dist=${lat},${lon}&per_page=50`;
+  const url = `https://api.openbrewerydb.org/breweries?by_dist=${lat},${lon}&per_page=500`;
   
   try {
     const response = await fetch(url);

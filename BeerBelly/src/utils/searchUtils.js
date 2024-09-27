@@ -1,4 +1,4 @@
-export const handleSearch = async (address, position, mapRef, setMarkerPosition, setError) => {
+export const handleSearch = async (address, position, setMarkerPosition, setError) => {
   try {
     let newPosition;
     let fullAddress;
@@ -17,12 +17,6 @@ export const handleSearch = async (address, position, mapRef, setMarkerPosition,
       }
     }
     setMarkerPosition(newPosition);
-    
-    if (mapRef.current) {
-      const detroitPosition = [42.3314, -83.0458];
-      const bounds = [newPosition, detroitPosition];
-      mapRef.current.fitBounds(bounds, { padding: [50, 50] });
-    }
     return { position: newPosition, address: fullAddress };
   } catch (error) {
     console.error('Error geocoding address:', error);
