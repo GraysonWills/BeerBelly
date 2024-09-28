@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/LayersButton.css';
 
 const LayersButton = ({ isOpen, toggleLayers, layers, setCurrentLayer }) => (
   <div className="layers-control">

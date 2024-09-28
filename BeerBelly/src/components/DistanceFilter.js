@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/DistanceFilter.css';
   const DistanceFilter = ({ distance, setDistance }) => {
     const [inputValue, setInputValue] = useState(distance.toString());
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/RecenterButton.css';
 
 const RecenterButton = ({ isMapCentered, handleRecenter }) => (
   !isMapCentered && (

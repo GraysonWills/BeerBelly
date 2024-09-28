@@ -1,7 +1,9 @@
 import React from 'react';
 import DistanceFilter from './DistanceFilter';
+import BreweryTypeFilter from './BreweryTypeFilter';
+import '../styles/SearchBox.css';
 
-const SearchBox = ({ address, setAddress, handleSearch, handleUseMyLocation, handleClearSearch, isLoading, error, distance, setDistance }) => {
+const SearchBox = ({ address, setAddress, handleSearch, handleUseMyLocation, handleClearSearch, isLoading, error, distance, setDistance, selectedBreweryType, setSelectedBreweryType }) => {
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       handleSearch();
@@ -11,7 +13,7 @@ const SearchBox = ({ address, setAddress, handleSearch, handleUseMyLocation, han
   return (
     <div className="search-container">
       <div className="search-input-wrapper">
-      <input
+        <input
           type="text"
           value={address}
           onChange={(e) => setAddress(e.target.value)}
@@ -27,7 +29,10 @@ const SearchBox = ({ address, setAddress, handleSearch, handleUseMyLocation, han
       <button onClick={handleSearch} className="search-button">
         {isLoading ? 'Searching...' : 'Search'}
       </button>
-      <DistanceFilter distance={distance} setDistance={setDistance} />
+      <div className="filter-container">
+        <DistanceFilter distance={distance} setDistance={setDistance} />
+        <BreweryTypeFilter selectedType={selectedBreweryType} setSelectedType={setSelectedBreweryType} />
+      </div>
       {error && <div className="error-message">{error}</div>}
     </div>
   );
