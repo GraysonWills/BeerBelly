@@ -15,7 +15,9 @@ export const useMapFunctions = (mapRef) => {
     if (mapRef.current && markerPosition) {
       mapRef.current.flyTo(markerPosition, currentZoom, { duration: 0.5 });
       setIsMapCentered(true);
+      return true; // Return true to indicate recentering occurred
     }
+    return false; // Return false if recentering didn't occur
   }, [markerPosition, currentZoom]);
 
   useEffect(() => {

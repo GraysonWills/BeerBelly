@@ -1,0 +1,47 @@
+.location-popup {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 12.5%;
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+
+.location-popup.closed {
+  transform: translateX(-100%);
+}
+
+.location-popup.open {
+  transform: translateX(0);
+}
+
+.toggle-button, .open-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 60px;
+  background-color: white;
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.toggle-button {
+  right: -30px;
+}
+
+.open-button {
+  left: 0;
+}
+
+.location-list {
+  height: 100%;
+  overflow-y: auto;
+}

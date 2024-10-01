@@ -3,7 +3,7 @@ import DistanceFilter from './DistanceFilter';
 import BreweryTypeFilter from './BreweryTypeFilter';
 import '../styles/SearchBox.css';
 
-const SearchBox = ({ address, setAddress, handleSearch, handleUseMyLocation, handleClearSearch, isLoading, error, distance, setDistance, selectedBreweryType, setSelectedBreweryType }) => {
+const SearchBox = ({ address, setAddress, handleSearch, handleUseMyLocation, handleClearSearch, isLoading, error, distance, setDistance, selectedBreweryType, setSelectedBreweryType, isPopupOpen }) => {
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       handleSearch();
@@ -11,7 +11,7 @@ const SearchBox = ({ address, setAddress, handleSearch, handleUseMyLocation, han
   };
 
   return (
-    <div className="search-container">
+    <div className={`search-container ${isPopupOpen ? 'search-box-shifted' : ''}`}>
       <div className="search-input-wrapper">
         <input
           type="text"
