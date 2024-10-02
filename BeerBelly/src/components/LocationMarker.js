@@ -1,18 +1,12 @@
-import React, { useRef, useImperativeHandle, forwardRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Marker, Popup } from 'react-leaflet';
 import { blueIcon } from '../utils/mapIcons';
 import '../styles/LocationMarker.css';
 
-const LocationMarker = forwardRef(({ location, onClick }, ref) => {
-  const markerRef = useRef();
+const LocationMarker = ({ location, onClick, isEnabled }) => {
+  const markerRef = useRef(null);
 
-  useImperativeHandle(ref, () => ({
-    openPopup: () => {
-      if (markerRef.current) {
-        markerRef.current.openPopup();
-      }
-    }
-  }));
+  if (!isEnabled) return null;
 
   return (
     <Marker
@@ -35,6 +29,6 @@ const LocationMarker = forwardRef(({ location, onClick }, ref) => {
       </Popup>
     </Marker>
   );
-});
+};
 
 export default LocationMarker;

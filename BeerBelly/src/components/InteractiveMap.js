@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import '../styles/InteractiveMap.css';
@@ -24,12 +24,12 @@ const InteractiveMap = () => {
   const [locations, setLocations] = useState([]);
   const mapRef = useRef(null);
 
-  const filteredLocations = locations.filter(location => {
+  const isLocationEnabled = (location) => {
+    const distanceMatch = location.distance <= distance;
     const typeMatch = selectedBreweryType === 'All' || location.breweryType === selectedBreweryType;
-    return location.distance <= distance && typeMatch;
-  });
+    return distanceMatch && typeMatch;
+  };
 
-  // Use filteredLocations instead of locations when rendering markers and passing to LocationPopup  const mapRef = useRef(null);
   const {
     currentLayer,
     setCurrentLayer,
@@ -50,7 +50,11 @@ const InteractiveMap = () => {
       setAddress(result.address);
       const nearbyBreweries = await fetchNearbyBreweries(result.position[0], result.position[1], distance);
       const locationData = await createLocationData(nearbyBreweries, result.position);
-      setLocations(locationData);
+      const locationsWithEnabledState = locationData.map(location => ({
+        ...location,
+        isEnabled: isLocationEnabled(location)
+      }));
+      setLocations(locationsWithEnabledState);
       setIsPopupOpen(true);
 
       if (mapRef.current) {
@@ -61,14 +65,18 @@ const InteractiveMap = () => {
     setIsLoading(false);
   };
 
+  const locationPopupRef = useRef(null);
+
   const handleMarkerClick = (location) => {
     setSelectedLocation(location);
     setIsPopupOpen(true);
     if (mapRef.current) {
       mapRef.current.setView([location.latitude, location.longitude], 15);
     }
-  };
-  const handleUseMyLocation = () => {
+    if (locationPopupRef.current) {
+      locationPopupRef.current.scrollToLocation(location.id);
+    }
+  };  const handleUseMyLocation = () => {
     setAddress("Your Location");
     setMarkerPosition(position);
   };
@@ -79,7 +87,7 @@ const InteractiveMap = () => {
 
   const handleSelectLocation = (location) => {
     if (mapRef.current) {
-      mapRef.current.closePopup(); // Close any open popups
+      mapRef.current.closePopup();
       mapRef.current.setView([location.latitude, location.longitude], 15);
       if (markerRefs.current[location.id]) {
         markerRefs.current[location.id].openPopup();
@@ -97,6 +105,15 @@ const InteractiveMap = () => {
         mapRef.current.closePopup();
       }
     };
+
+  useEffect(() => {
+    setLocations(prevLocations => 
+      prevLocations.map(location => ({
+        ...location,
+        isEnabled: isLocationEnabled(location)
+      }))
+    );
+  }, [distance, selectedBreweryType]);
 
   return (
     <div className="interactive-map-container">
@@ -127,18 +144,8 @@ const InteractiveMap = () => {
           deselectMarkers={deselectMarkers}
         />
       </div>
-      <LocationPopup 
-        locations={filteredLocations}
-        selectedLocation={selectedLocation}
-        onSelectLocation={handleSelectLocation}
-        isOpen={isPopupOpen}
-        onOpenChange={setIsPopupOpen}
-        distance={distance}
-        selectedBreweryType={selectedBreweryType}
-        markerPosition={markerPosition}
-      />
       {isLoading && <div className="spinner-overlay"><div className="spinner"></div></div>}
-      <MapContainer center={position} zoom={1} className="map-container" ref={mapRef} zoomControl={false}>
+      <MapContainer center={position} zoom={13} className="map-container" ref={mapRef} zoomControl={false}>
         <TileLayer
           url={tileLayers[currentLayer]}
           attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -154,14 +161,23 @@ const InteractiveMap = () => {
             </Popup>
           </Marker>
         )}
-        {filteredLocations.map((location) => (
+        {locations.map((location) => (
           <LocationMarker
             key={location.id}
             location={location}
             onClick={handleMarkerClick}
+            isEnabled={location.isEnabled}
           />
         ))}
       </MapContainer>
+      <LocationPopup 
+        ref={locationPopupRef}
+        locations={locations}
+        selectedLocation={selectedLocation}
+        onSelectLocation={handleSelectLocation}
+        isOpen={isPopupOpen}
+        onOpenChange={setIsPopupOpen}
+      />
     </div>
   );
 };

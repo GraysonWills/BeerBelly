@@ -1,9 +1,9 @@
 import React from 'react';
 import '../styles/LocationCard.css';
 
-const LocationCard = ({ location, onSelect, id }) => {
+const LocationCard = ({ location, onSelect, id, isEnabled }) => {
   return (
-    <div className="location-card" onClick={() => onSelect(location)} id={id}>
+    <div className={`location-card ${isEnabled ? 'enabled' : 'disabled'}`} onClick={() => onSelect(location)} id={id}>
       <h3>{location.name}</h3>
       <p>{location.address}</p>
       <p>Distance: {location.distance.toFixed(2)} miles</p>
@@ -16,4 +16,5 @@ const LocationCard = ({ location, onSelect, id }) => {
     </div>
   );
 };
+
 export default LocationCard;
