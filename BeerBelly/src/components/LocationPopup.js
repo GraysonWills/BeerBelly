@@ -1,34 +1,39 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import LocationCard from './LocationCard';
 import '../styles/LocationPopup.css';
-import { getDistance } from '../utils/distanceUtils';
 
-const LocationPopup = ({ locations, selectedLocation, onSelectLocation, distance, selectedBreweryType, markerPosition, onOpenChange, isOpen }) => {
-  const filteredLocations = locations.filter(location => {
-    const locationDistance = getDistance(markerPosition[0], markerPosition[1], location.latitude, location.longitude);
-    const typeMatch = selectedBreweryType === 'All' || location.brewery_type === selectedBreweryType;
-    return locationDistance <= distance && typeMatch;
-  });
+const LocationPopup = ({ locations, selectedLocation, onSelectLocation, isOpen, onOpenChange }) => {
+  const popupRef = useRef(null);
+
+  useEffect(() => {
+    if (selectedLocation && popupRef.current) {
+      const selectedCard = popupRef.current.querySelector(`#location-card-${selectedLocation.id}`);
+      if (selectedCard) {
+        const popupContainer = popupRef.current.querySelector('.location-list');
+        const cardTop = selectedCard.offsetTop;
+        popupContainer.scrollTo({
+          top: cardTop,
+          behavior: 'smooth'
+        });
+      }
+    }
+  }, [selectedLocation]);
 
   return (
-    <div className={`location-popup ${isOpen ? 'open' : 'closed'}`}>
+    <div ref={popupRef} className={`location-popup ${isOpen ? 'open' : 'closed'}`}>
       <div className="toggle-button" onClick={() => onOpenChange(!isOpen)}>
         {isOpen ? '←' : '→'}
       </div>
       {isOpen && (
         <div className="location-list">
-          {filteredLocations.length > 0 ? (
-            filteredLocations.map(location => (
-              <LocationCard 
-                key={location.id} 
-                location={location} 
-                onSelect={onSelectLocation}
-                id={`location-card-${location.id}`}
-              />
-            ))
-          ) : (
-            <div className="no-locations-message">No locations found</div>
-          )}
+          {locations.map((location) => (
+            <LocationCard
+              key={location.id}
+              id={`location-card-${location.id}`}
+              location={location}
+              onSelect={onSelectLocation}
+            />
+          ))}
         </div>
       )}
     </div>

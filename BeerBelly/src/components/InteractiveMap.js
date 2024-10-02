@@ -1,29 +1,35 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
+import React, { useState, useRef } from 'react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import '../styles/InteractiveMap.css';
-import { redIcon, blueIcon } from '../utils/mapIcons';
+import { redIcon } from '../utils/mapIcons';
 import { tileLayers } from '../utils/mapLayers';
 import { useMapFunctions } from '../hooks/useMapFunctions';
 import { handleSearch } from '../utils/searchUtils';
 import { fetchNearbyBreweries } from '../utils/breweryUtils';
-import { getDistance } from '../utils/distanceUtils';
-import { getWikimediaImages } from '../utils/wikimediaUtils';
-import { getFoursquareData } from '../utils/foursquareUtils';
+import { createLocationData } from '../utils/LocationData';
 import LayersButton from './LayersButton';
 import RecenterButton from './RecenterButton';
 import SearchBox from './SearchBox';
 import LocationPopup from './LocationPopup';
+import LocationMarker from './LocationMarker';
 
 const InteractiveMap = () => {
   const [address, setAddress] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [breweries, setBreweries] = useState([]);
   const [distance, setDistance] = useState(20);
   const [selectedBreweryType, setSelectedBreweryType] = useState('All');
   const [selectedLocations, setSelectedLocations] = useState([]);
+  const [locations, setLocations] = useState([]);
   const mapRef = useRef(null);
+
+  const filteredLocations = locations.filter(location => {
+    const typeMatch = selectedBreweryType === 'All' || location.breweryType === selectedBreweryType;
+    return location.distance <= distance && typeMatch;
+  });
+
+  // Use filteredLocations instead of locations when rendering markers and passing to LocationPopup  const mapRef = useRef(null);
   const {
     currentLayer,
     setCurrentLayer,
@@ -32,16 +38,9 @@ const InteractiveMap = () => {
     isMapCentered,
     markerPosition,
     setMarkerPosition,
-    position,    handleRecenter
+    position,
+    handleRecenter
   } = useMapFunctions(mapRef);
-
-  const handleMarkerClick = (brewery) => {
-    setSelectedLocation(brewery);
-    setIsPopupOpen(true);
-    if (mapRef.current) {
-      mapRef.current.setView([brewery.latitude, brewery.longitude], 15);
-    }
-  };
 
   const handleSearchClick = async () => {
     setIsLoading(true);
@@ -50,36 +49,25 @@ const InteractiveMap = () => {
     if (result && result.position) {
       setAddress(result.address);
       const nearbyBreweries = await fetchNearbyBreweries(result.position[0], result.position[1], distance);
-      setBreweries(nearbyBreweries);
-    
-      const locationsWithData = await Promise.all(nearbyBreweries.map(async (brewery) => {
-        const images = await getWikimediaImages(brewery.name);
-        let foursquareData = null;
-        try {
-          foursquareData = await getFoursquareData(brewery.latitude, brewery.longitude);
-        } catch (error) {
-          console.error('Error fetching Foursquare data:', error);
-        }
-        
-        return {
-          ...brewery,
-          image: images && images.length > 0 ? images[0] : null,
-          rating: foursquareData ? foursquareData.rating : 'N/A',
-          review: foursquareData && foursquareData.tips ? foursquareData.tips[0].text : 'No review available',
-        };
-      }));
-
-      setSelectedLocations(locationsWithData);
-      setIsPopupOpen(true); // Add this line to open the popup
+      const locationData = await createLocationData(nearbyBreweries, result.position);
+      setLocations(locationData);
+      setIsPopupOpen(true);
 
       if (mapRef.current) {
-        const bounds = [result.position, ...nearbyBreweries.map(b => [b.latitude, b.longitude])];
+        const bounds = [result.position, ...locationData.map(l => [l.latitude, l.longitude])];
         mapRef.current.fitBounds(bounds, { padding: [50, 50] });
       }
     }
     setIsLoading(false);
   };
 
+  const handleMarkerClick = (location) => {
+    setSelectedLocation(location);
+    setIsPopupOpen(true);
+    if (mapRef.current) {
+      mapRef.current.setView([location.latitude, location.longitude], 15);
+    }
+  };
   const handleUseMyLocation = () => {
     setAddress("Your Location");
     setMarkerPosition(position);
@@ -89,28 +77,26 @@ const InteractiveMap = () => {
     setAddress('');
   };
 
-  const filteredBreweries = breweries.filter(brewery => {
-    const breweryDistance = getDistance(markerPosition[0], markerPosition[1], brewery.latitude, brewery.longitude);
-    const typeMatch = selectedBreweryType === 'All' || brewery.brewery_type === selectedBreweryType;
-    return breweryDistance <= distance && typeMatch && brewery.brewery_type !== 'closed';
-  });
-
   const handleSelectLocation = (location) => {
     if (mapRef.current) {
+      mapRef.current.closePopup(); // Close any open popups
       mapRef.current.setView([location.latitude, location.longitude], 15);
+      if (markerRefs.current[location.id]) {
+        markerRefs.current[location.id].openPopup();
+      }
     }
+    setSelectedLocation(location);
   };
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState(null);
-
-  const handleRecenterAndDeselect = () => {
-    const recentered = handleRecenter();
-    if (recentered) {
+  const markerRefs = useRef({});
+    const deselectMarkers = () => {
       setSelectedLocation(null);
-      setIsPopupOpen(false);
-    }
-  };
+      if (mapRef.current) {
+        mapRef.current.closePopup();
+      }
+    };
 
   return (
     <div className="interactive-map-container">
@@ -137,42 +123,19 @@ const InteractiveMap = () => {
         />
         <RecenterButton
           isMapCentered={isMapCentered}
-          handleRecenter={handleRecenterAndDeselect}
-        />
-      </div>
-      <LocationPopup 
-        locations={selectedLocations}
-        selectedLocation={selectedLocation}
-        onSelectLocation={handleSelectLocation}
-        isSearched={isLoading}
-        onOpenChange={setIsPopupOpen}
-        distance={distance}
-        selectedBreweryType={selectedBreweryType}
-        markerPosition={markerPosition}
-        isOpen={isPopupOpen}
-      />
-      <div className="controls-container">
-        <LayersButton
-          isOpen={isLayersOpen}
-          toggleLayers={toggleLayers}
-          layers={tileLayers}
-          setCurrentLayer={setCurrentLayer}
-        />
-        <RecenterButton
-          isMapCentered={isMapCentered}
           handleRecenter={handleRecenter}
+          deselectMarkers={deselectMarkers}
         />
       </div>
       <LocationPopup 
-        locations={selectedLocations}
+        locations={filteredLocations}
         selectedLocation={selectedLocation}
         onSelectLocation={handleSelectLocation}
-        isSearched={isLoading}
+        isOpen={isPopupOpen}
         onOpenChange={setIsPopupOpen}
         distance={distance}
         selectedBreweryType={selectedBreweryType}
         markerPosition={markerPosition}
-        isOpen={isPopupOpen}
       />
       {isLoading && <div className="spinner-overlay"><div className="spinner"></div></div>}
       <MapContainer center={position} zoom={1} className="map-container" ref={mapRef} zoomControl={false}>
@@ -191,38 +154,16 @@ const InteractiveMap = () => {
             </Popup>
           </Marker>
         )}
-        {filteredBreweries.map((brewery) => {
-          const breweryDistance = getDistance(markerPosition[0], markerPosition[1], brewery.latitude, brewery.longitude);
-          const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${brewery.name}, ${brewery.street}, ${brewery.city}, ${brewery.state} ${brewery.postal_code}`)}`;
-          
-          return (
-            <Marker 
-              key={brewery.id} 
-              position={[brewery.latitude, brewery.longitude]} 
-              icon={blueIcon}
-              eventHandlers={{
-                click: () => handleMarkerClick(brewery),
-              }}
-            >
-              <Popup>
-                <div>
-                  <strong>{brewery.name}</strong>
-                  <br />
-                  {brewery.street}
-                  <br />
-                  {brewery.city}, {brewery.state} {brewery.postal_code}
-                  <br />
-                  Distance: {breweryDistance.toFixed(2)} miles
-                  <br />
-                  <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer">Travel Here!</a>
-                </div>
-              </Popup>
-            </Marker>
-          );
-        })}
+        {filteredLocations.map((location) => (
+          <LocationMarker
+            key={location.id}
+            location={location}
+            onClick={handleMarkerClick}
+          />
+        ))}
       </MapContainer>
     </div>
-  ); 
+  );
 };
 
 export default InteractiveMap;
