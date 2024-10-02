@@ -78,6 +78,15 @@
   background-color: #45a049;
 }
 
+.search-button.rate-limited {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.search-button.rate-limited:hover {
+  background-color: #cccccc;
+}
+
 @media (max-width: 480px) {
   .search-container {
     width: calc(100% - 20px);

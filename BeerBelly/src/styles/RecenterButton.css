@@ -3,4 +3,20 @@
     padding: 7.5px 15px;
     margin-bottom: 5px;
     display: block;
+    width: 100px;
+    height: 30px;
+  }
+
+  .recenter-button {
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+
+  .fade-in {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .fade-out {
+    opacity: 0;
+    visibility: hidden;
   }

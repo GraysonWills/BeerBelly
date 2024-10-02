@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import '../styles/InteractiveMap.css';
 import { redIcon, blueIcon } from '../utils/mapIcons';
@@ -32,8 +32,7 @@ const InteractiveMap = () => {
     isMapCentered,
     markerPosition,
     setMarkerPosition,
-    position,
-    handleRecenter
+    position,    handleRecenter
   } = useMapFunctions(mapRef);
 
   const handleMarkerClick = (brewery) => {
@@ -176,7 +175,7 @@ const InteractiveMap = () => {
         isOpen={isPopupOpen}
       />
       {isLoading && <div className="spinner-overlay"><div className="spinner"></div></div>}
-      <MapContainer center={position} zoom={13} className="map-container" ref={mapRef}>
+      <MapContainer center={position} zoom={1} className="map-container" ref={mapRef} zoomControl={false}>
         <TileLayer
           url={tileLayers[currentLayer]}
           attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
