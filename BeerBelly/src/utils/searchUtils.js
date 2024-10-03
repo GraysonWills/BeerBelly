@@ -2,6 +2,7 @@ export const handleSearch = async (address, position, setMarkerPosition, setErro
   try {
     let newPosition;
     let fullAddress;
+    console.log('address:', address);
     if (address === "Your Location") {
       newPosition = position;
       fullAddress = "Your Location";

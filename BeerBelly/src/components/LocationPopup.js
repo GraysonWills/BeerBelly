@@ -1,12 +1,19 @@
-import React, { forwardRef, useImperativeHandle, useRef } from 'react';
+import React, { forwardRef, useImperativeHandle, useRef, useState, useEffect } from 'react';
 import LocationCard from './LocationCard';
 import '../styles/LocationPopup.css';
+import ToggleIcon from './ToggleIcon';
 
 const LocationPopup = forwardRef(({ locations, selectedLocation, onSelectLocation, isOpen, onOpenChange }, ref) => {
   const popupRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  
-const scrollToLocation = (locationId) => {
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const scrollToLocation = (locationId) => {
     if (popupRef.current) {
       const locationCard = popupRef.current.querySelector(`#location-card-${locationId}`);
       if (locationCard) {
@@ -39,7 +46,7 @@ const scrollToLocation = (locationId) => {
   return (
     <div ref={popupRef} className={`location-popup ${isOpen ? 'open' : 'closed'}`}>
       <div className="toggle-button" onClick={() => onOpenChange(!isOpen)}>
-        {isOpen ? '←' : '→'}
+        <ToggleIcon isMobile={isMobile} />
       </div>
       {isOpen && (
         <div className="location-list">
@@ -62,4 +69,3 @@ const scrollToLocation = (locationId) => {
 });
 
 export default LocationPopup;
-

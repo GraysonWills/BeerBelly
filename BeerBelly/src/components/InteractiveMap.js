@@ -76,7 +76,15 @@ const InteractiveMap = () => {
     if (locationPopupRef.current) {
       locationPopupRef.current.scrollToLocation(location.id);
     }
-  };  const handleUseMyLocation = () => {
+  };  
+
+  useEffect(() => {
+    if (address === "Your Location") {
+      handleSearchClick();
+    }
+  }, [address]);
+  
+  const handleUseMyLocation = () => {
     setAddress("Your Location");
     setMarkerPosition(position);
   };
