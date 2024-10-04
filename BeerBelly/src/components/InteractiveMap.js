@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import '../styles/InteractiveMap.css';
 import { redIcon } from '../utils/mapIcons';
@@ -13,6 +13,17 @@ import RecenterButton from './RecenterButton';
 import SearchBox from './SearchBox';
 import LocationPopup from './LocationPopup';
 import LocationMarker from './LocationMarker';
+
+const SetMapConstraints = () => {
+  const map = useMap();
+  useEffect(() => {
+    if (map) {
+      map.setMinZoom(2.4);
+      map.setMaxBounds([[-90, -180], [90, 180]]);
+    }
+  }, [map]);
+  return null;
+};
 
 const InteractiveMap = () => {
   const [address, setAddress] = useState('');
@@ -154,6 +165,7 @@ const InteractiveMap = () => {
       </div>
       {isLoading && <div className="spinner-overlay"><div className="spinner"></div></div>}
       <MapContainer center={position} zoom={13} className="map-container" ref={mapRef} zoomControl={false}>
+        <SetMapConstraints />
         <TileLayer
           url={tileLayers[currentLayer]}
           attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
