@@ -42,5 +42,4 @@ import '../styles/DistanceFilter.css';
         <span>miles</span>
       </div>
     );
-  };
-export default DistanceFilter;
+  };export default DistanceFilter;

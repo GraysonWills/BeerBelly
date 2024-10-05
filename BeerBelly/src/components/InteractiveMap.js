@@ -3,7 +3,6 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import '../styles/InteractiveMap.css';
 import { redIcon } from '../utils/mapIcons';
-import { tileLayers } from '../utils/mapLayers';
 import { useMapFunctions } from '../hooks/useMapFunctions';
 import { handleSearch } from '../utils/searchUtils';
 import { fetchNearbyBreweries } from '../utils/breweryUtils';
@@ -13,6 +12,7 @@ import RecenterButton from './RecenterButton';
 import SearchBox from './SearchBox';
 import LocationPopup from './LocationPopup';
 import LocationMarker from './LocationMarker';
+import { tileLayers } from '../utils/mapLayers';
 
 const SetMapConstraints = () => {
   const map = useMap();
@@ -26,6 +26,7 @@ const SetMapConstraints = () => {
 };
 
 const InteractiveMap = () => {
+  const [currentLayer, setCurrentLayer] = useState('Hybrid');
   const [address, setAddress] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -41,8 +42,6 @@ const InteractiveMap = () => {
     return distanceMatch && typeMatch;
   };
   const {
-    currentLayer,
-    setCurrentLayer,
     isLayersOpen,
     toggleLayers,
     isMapCentered,
@@ -140,17 +139,13 @@ const InteractiveMap = () => {
         handleClearSearch={handleClearSearch}
         isLoading={isLoading}
         error={error}
+        layers={tileLayers}
         selectedBreweryType={selectedBreweryType}
         setSelectedBreweryType={setSelectedBreweryType}
         isPopupOpen={isPopupOpen}
+        setCurrentLayer={setCurrentLayer}
       />
       <div className="controls-container">
-        <LayersButton
-          isOpen={isLayersOpen}
-          toggleLayers={toggleLayers}
-          layers={tileLayers}
-          setCurrentLayer={setCurrentLayer}
-        />
         <RecenterButton
           isMapCentered={isMapCentered}
           handleRecenter={handleRecenter}
@@ -195,7 +190,7 @@ const InteractiveMap = () => {
         setSelectedTypes={setSelectedBreweryType}
         distance={distance}
         setDistance={setDistance}
-      />
+      />     
     </div>
   );
 };

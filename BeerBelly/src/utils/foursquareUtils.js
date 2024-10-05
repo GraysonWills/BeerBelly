@@ -1,20 +1,27 @@
 import { FOURSQUARE_API_KEY } from '../config';
-
-export const getFoursquareData = async (lat, lon) => {
-  const url = `https://api.foursquare.com/v3/places/search?ll=${lat},${lon}&radius=10&limit=1`;
+const fetchFoursquareData = async (latitude, longitude) => {
+  const apiKey = FOURSQUARE_API_KEY;  // Replace with your actual Foursquare API key
+  const apiUrl = `https://api.foursquare.com/v3/places/search?ll=${latitude},${longitude}&limit=5`;
 
   try {
-    const response = await fetch(url, {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json',
-        Authorization: FOURSQUARE_API_KEY
+      const response = await fetch(apiUrl, {
+          method: 'GET',
+          headers: {
+              'Authorization': apiKey,
+              'Content-Type': 'application/json'
+          }
+      });
+
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
       }
-    });
-    const data = await response.json();
-    return data.results[0];
+
+      const data = await response.json();
+      console.log('Location Details:', data);
+      return data;
   } catch (error) {
-    console.error('Error fetching Foursquare data:', error);
-    return null;
+      console.error('Error fetching location details:', error);
   }
 };
+
+export default fetchFoursquareData;

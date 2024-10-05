@@ -1,16 +1,11 @@
 import { getWikimediaImages } from './wikimediaUtils';
-import { getFoursquareData } from './foursquareUtils';
+
 import { getDistance } from './distanceUtils';
 
 export const createLocationData = async (breweries, searchPosition) => {
   return Promise.all(breweries.map(async (brewery) => {
     const images = await getWikimediaImages(brewery.name);
     let foursquareData = null;
-    try {
-      foursquareData = await getFoursquareData(brewery.latitude, brewery.longitude);
-    } catch (error) {
-      console.error('Error fetching Foursquare data:', error);
-    }
 
     const distance = getDistance(
       searchPosition[0],
