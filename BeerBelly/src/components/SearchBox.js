@@ -72,8 +72,6 @@ const SearchBox = ({ address, setAddress, handleSearch, handleUseMyLocation, han
           </div>
         </div>
         <div className={`filter-container ${isFiltersVisible ? 'visible' : ''}`}>
-          <DistanceFilter distance={distance} setDistance={setDistance} />
-          <BreweryTypeFilter selectedType={selectedBreweryType} setSelectedType={setSelectedBreweryType} />
         </div>
         {error && <div className="error-message">{error}</div>}
       </div>

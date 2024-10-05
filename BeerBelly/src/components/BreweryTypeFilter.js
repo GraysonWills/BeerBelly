@@ -2,7 +2,6 @@ import React from 'react';
 import '../styles/BreweryTypeFilter.css';
 
 const breweryTypes = [
-  'All',
   'micro',
   'nano',
   'regional',
@@ -13,19 +12,25 @@ const breweryTypes = [
   'proprietor'
 ];
 
-const BreweryTypeFilter = ({ selectedType, setSelectedType }) => {
+const BreweryTypeFilter = ({ selectedTypes, setSelectedTypes }) => {
+  const toggleType = (type) => {
+    setSelectedTypes(prev => 
+      prev.includes(type) ? prev.filter(t => t !== type) : [...prev, type]
+    );
+  };
+
+
   return (
     <div className="brewery-type-filter">
-      <select
-        value={selectedType}
-        onChange={(e) => setSelectedType(e.target.value)}
-      >
-        {breweryTypes.map((type) => (
-          <option key={type} value={type}>
-            {type.charAt(0).toUpperCase() + type.slice(1)}
-          </option>
-        ))}
-      </select>
+      {breweryTypes.map((type) => (
+        <button
+          key={type}
+          className={`brewery-type-button ${selectedTypes.includes(type) ? 'selected' : ''}`}
+          onClick={() => toggleType(type)}
+        >
+          {type.charAt(0).toUpperCase() + type.slice(1)}
+        </button>
+      ))}
     </div>
   );
 };

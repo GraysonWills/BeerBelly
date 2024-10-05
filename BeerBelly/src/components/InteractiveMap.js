@@ -37,10 +37,9 @@ const InteractiveMap = () => {
 
   const isLocationEnabled = (location) => {
     const distanceMatch = location.distance <= distance;
-    const typeMatch = selectedBreweryType === 'All' || location.breweryType === selectedBreweryType;
+    const typeMatch = selectedBreweryType.length === 0 || selectedBreweryType.includes(location.breweryType);
     return distanceMatch && typeMatch;
   };
-
   const {
     currentLayer,
     setCurrentLayer,
@@ -61,11 +60,8 @@ const InteractiveMap = () => {
       setAddress(result.address);
       const nearbyBreweries = await fetchNearbyBreweries(result.position[0], result.position[1], distance);
       const locationData = await createLocationData(nearbyBreweries, result.position);
-      const locationsWithEnabledState = locationData.map(location => ({
-        ...location,
-        isEnabled: isLocationEnabled(location)
-      }));
-      setLocations(locationsWithEnabledState);
+      setLocations(locationData);
+      setSelectedBreweryType([]); // Reset brewery type filter
       setIsPopupOpen(true);
 
       if (mapRef.current) {
@@ -144,8 +140,6 @@ const InteractiveMap = () => {
         handleClearSearch={handleClearSearch}
         isLoading={isLoading}
         error={error}
-        distance={distance}
-        setDistance={setDistance}
         selectedBreweryType={selectedBreweryType}
         setSelectedBreweryType={setSelectedBreweryType}
         isPopupOpen={isPopupOpen}
@@ -197,6 +191,10 @@ const InteractiveMap = () => {
         onSelectLocation={handleSelectLocation}
         isOpen={isPopupOpen}
         onOpenChange={setIsPopupOpen}
+        selectedTypes={selectedBreweryType}
+        setSelectedTypes={setSelectedBreweryType}
+        distance={distance}
+        setDistance={setDistance}
       />
     </div>
   );

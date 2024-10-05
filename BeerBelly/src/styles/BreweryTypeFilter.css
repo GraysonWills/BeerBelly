@@ -1,12 +1,46 @@
+  .brewery-type-filter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 8px;
+    padding: 10px;
+    width: 100%;
+  }
 
-.brewery-type-filter {
-  flex: 1;
-  margin-left: 10px;
-}
+  .brewery-type-button {
+    width: 100%;
+    padding: 8px 0;
+    text-align: center;
+    border: 2px solid #9E4113;
+    border-radius: 20px;
+    background-color: white;
+    color: #9E4113;
+    /* color: #007bff; */
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
 
-.brewery-type-filter select {
-  width: 100%;
-  padding: 5px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
+  .brewery-type-button:hover {
+    background-color: #f5e6dd;
+  }
+
+  .brewery-type-button.selected {
+    background-color: #9E4113;
+    /* background-color: #007bff; */
+    color: white;
+  }
+
+  .brewery-type-button.selected:hover {
+    background-color: #7a3310;
+    border-color: #7a3310;
+    /* background-color: #0056b3;
+    border-color: #0056b3; */
+  }
+
+  @media (max-width: 768px) {
+    .brewery-type-button {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+  }
