@@ -65,7 +65,7 @@
 
       .search-button,
       .location-button,
-      .filter-toggle-button {
+      .layers-button {
         cursor: pointer;
         padding: 0 12px;
         display: flex;
@@ -73,6 +73,7 @@
         justify-content: center;
         min-width: 40px;
         border: 0px solid #ccc;
+        border-left: 1px solid #CCC;
         background: none;
         font-size: 1.2em;
         position: relative;
@@ -84,16 +85,16 @@
 
       .search-button svg,
       .location-button svg,
-      .filter-toggle-button svg {
-        width: 18px;
-        height: 18px;
+      .layers-button svg {
+        width: 20px;
+        height: 20px;
         color: black;
         transition: transform 0.3s ease;
       }
 
       .search-button:hover svg,
       .location-button:hover svg,
-      .filter-toggle-button:hover svg {
+      .layers-button:hover svg {
         transform: translateY(-2px);
       }
 
@@ -103,7 +104,6 @@
       height: 40px;
       padding: 0 15px;
       font-size: 14px;
-      border-left: none;
    
       white-space: nowrap;
     }
@@ -125,7 +125,7 @@
 @media (max-width: 768px) {
   .search-container {
     transition: none;
-    max-width: 412px;
+    max-width: 418px;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -134,30 +134,6 @@
     left: 10px;
   }
 }
-
-
-.filter-container {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
-}
-
-.filter-container.visible {
-  max-height: 200px; /* Adjust this value based on your content */
-}
-
-
-
-.layers-button svg {
-  transition: transform 0.3s ease;
-}
-
-.layers-button:hover svg {
-  transform: translateY(-2px);
-}
-
-
-
 
   .layers-dropdown {
     transform: translateY(-10px);

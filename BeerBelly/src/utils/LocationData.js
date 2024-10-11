@@ -1,11 +1,9 @@
-import { getWikimediaImages } from './wikimediaUtils';
-
+import { fetchFoursquareData } from './foursquareUtils';
 import { getDistance } from './distanceUtils';
 
 export const createLocationData = async (breweries, searchPosition) => {
   return Promise.all(breweries.map(async (brewery) => {
-    const images = await getWikimediaImages(brewery.name);
-    let foursquareData = null;
+    const foursquareData = await fetchFoursquareData(brewery.latitude, brewery.longitude, brewery.name);
 
     const distance = getDistance(
       searchPosition[0],
@@ -26,9 +24,9 @@ export const createLocationData = async (breweries, searchPosition) => {
       longitude: brewery.longitude,
       distance: distance,
       googleMapsUrl: googleMapsUrl,
-      image: images && images.length > 0 ? images[0] : null,
+      photos: foursquareData ? foursquareData.photos : [],
       rating: foursquareData ? foursquareData.rating : 'N/A',
-      review: foursquareData && foursquareData.tips ? foursquareData.tips[0].text : 'No review available',
+      // review: foursquareData && foursquareData.tips.length > 0 ? foursquareData.tips[0].text : 'No review available',
       breweryType: brewery.brewery_type
     };
   }));

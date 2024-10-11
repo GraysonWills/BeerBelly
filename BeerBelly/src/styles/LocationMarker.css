@@ -38,3 +38,9 @@
 .leaflet-container a.leaflet-popup-close-button {
   color: #333;
 }
+
+.leaflet-marker-icon.selected {
+  filter: hue-rotate(30deg) brightness(1.2);
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+}

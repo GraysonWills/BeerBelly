@@ -65,7 +65,11 @@ const InteractiveMap = () => {
 
       if (mapRef.current) {
         const bounds = [result.position, ...locationData.map(l => [l.latitude, l.longitude])];
-        mapRef.current.fitBounds(bounds, { padding: [50, 50] });
+        mapRef.current.flyToBounds(bounds, {
+          padding: [50, 50],
+          duration: 2, // Duration in seconds
+          easeLinearity: 0.5 // Adjust this value for different easing effects
+        });
       }
     }
     setIsLoading(false);
@@ -77,7 +81,9 @@ const InteractiveMap = () => {
     setSelectedLocation(location);
     setIsPopupOpen(true);
     if (mapRef.current) {
-      mapRef.current.setView([location.latitude, location.longitude], 15);
+      mapRef.current.flyTo([location.latitude, location.longitude], 15, {
+        duration: 2 // Duration in seconds
+      });
     }
     if (locationPopupRef.current) {
       locationPopupRef.current.scrollToLocation(location.id);
@@ -102,13 +108,16 @@ const InteractiveMap = () => {
   const handleSelectLocation = (location) => {
     if (mapRef.current) {
       mapRef.current.closePopup();
-      mapRef.current.setView([location.latitude, location.longitude], 15);
+      mapRef.current.flyTo([location.latitude, location.longitude], 15, {
+        duration: 2
+      });
       if (markerRefs.current[location.id]) {
         markerRefs.current[location.id].openPopup();
       }
     }
     setSelectedLocation(location);
   };
+
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState(null);
@@ -176,6 +185,14 @@ const InteractiveMap = () => {
             location={location}
             onClick={handleMarkerClick}
             isEnabled={location.isEnabled}
+            isSelected={selectedLocation && selectedLocation.id === location.id}
+            markerRef={(ref) => {
+              if (ref) {
+                markerRefs.current[location.id] = ref
+              } else {
+                delete markerRefs.current[location.id]
+              }
+            }}
           />
         ))}
       </MapContainer>
