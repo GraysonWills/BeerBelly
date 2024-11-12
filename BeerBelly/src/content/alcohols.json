@@ -1,0 +1,219 @@
+{
+  "beer": {
+    "id": "beer",
+    "title": "Beer",
+    "backgroundImage": "/assets/HowTo/img/beer.jpg",
+    "description": "A fermented beverage made from grain mash, typically barley",
+    "difficulty": "Beginner",
+    "fermentationTime": "2-6 weeks",
+    "alcoholContent": "3-12%",
+    "ingredients": [
+      "Malted barley",
+      "Hops",
+      "Yeast",
+      "Water"
+    ],
+    "basicSteps": [
+      "Malting",
+      "Mashing",
+      "Boiling",
+      "Fermentation",
+      "Bottling"
+    ]
+  },
+  "brandy": {
+    "id": "brandy",
+    "title": "Brandy",
+    "backgroundImage": "/assets/HowTo/img/brandy.jpg",
+    "description": "A spirit produced by distilling wine or fermented fruit juice",
+    "difficulty": "Advanced",
+    "fermentationTime": "3-4 weeks + distillation",
+    "alcoholContent": "35-60%",
+    "ingredients": [
+      "Wine or fruit juice",
+      "Yeast"
+    ],
+    "basicSteps": [
+      "Fermentation",
+      "Distillation",
+      "Aging"
+    ]
+  },
+  "cider": {
+    "id": "cider",
+    "title": "Cider",
+    "backgroundImage": "/assets/HowTo/img/cider.jpg",
+    "description": "A fermented alcoholic beverage made from apple juice",
+    "difficulty": "Beginner",
+    "fermentationTime": "2-4 weeks",
+    "alcoholContent": "4.5-7%",
+    "ingredients": [
+      "Apple juice",
+      "Yeast",
+      "Optional sugar"
+    ],
+    "basicSteps": [
+      "Juice preparation",
+      "Fermentation",
+      "Bottling"
+    ]
+  },
+  "gin": {
+    "id": "gin",
+    "title": "Gin",
+    "backgroundImage": "/assets/HowTo/img/gin.jpg",
+    "description": "A spirit flavored with juniper berries and other botanicals",
+    "difficulty": "Expert",
+    "fermentationTime": "Base spirit + infusion time",
+    "alcoholContent": "37.5-50%",
+    "ingredients": [
+      "Base spirit",
+      "Juniper berries",
+      "Botanicals"
+    ],
+    "basicSteps": [
+      "Base spirit preparation",
+      "Botanical infusion",
+      "Distillation"
+    ]
+  },
+  "mead": {
+    "id": "mead",
+    "title": "Mead",
+    "backgroundImage": "/assets/HowTo/img/mead.jpg",
+    "description": "An ancient alcoholic beverage made from fermented honey",
+    "difficulty": "Intermediate",
+    "fermentationTime": "2-3 months",
+    "alcoholContent": "8-20%",
+    "ingredients": [
+      "Honey",
+      "Water",
+      "Yeast"
+    ],
+    "basicSteps": [
+      "Must preparation",
+      "Fermentation",
+      "Aging"
+    ]
+  },
+  "rum": {
+    "id": "rum",
+    "title": "Rum",
+    "backgroundImage": "/assets/HowTo/img/rum.jpg",
+    "description": "A spirit made from sugarcane byproducts",
+    "difficulty": "Expert",
+    "fermentationTime": "1-2 weeks + distillation",
+    "alcoholContent": "40-75%",
+    "ingredients": [
+      "Molasses or sugarcane juice",
+      "Yeast",
+      "Water"
+    ],
+    "basicSteps": [
+      "Fermentation",
+      "Distillation",
+      "Aging"
+    ]
+  },
+  "sake": {
+    "id": "sake",
+    "title": "Sake",
+    "backgroundImage": "/assets/HowTo/img/sake.jpg",
+    "description": "A Japanese rice wine made through multiple parallel fermentation",
+    "difficulty": "Expert",
+    "fermentationTime": "4-8 weeks",
+    "alcoholContent": "14-16%",
+    "ingredients": [
+      "Rice",
+      "Koji mold",
+      "Yeast",
+      "Water"
+    ],
+    "basicSteps": [
+      "Rice polishing",
+      "Koji cultivation",
+      "Multiple parallel fermentation"
+    ]
+  },
+  "tequila": {
+    "id": "tequila",
+    "title": "Tequila",
+    "backgroundImage": "/assets/HowTo/img/tequila.jpg",
+    "description": "A Mexican spirit made from blue agave",
+    "difficulty": "Expert",
+    "fermentationTime": "3-5 days + distillation",
+    "alcoholContent": "35-55%",
+    "ingredients": [
+      "Blue agave",
+      "Yeast",
+      "Water"
+    ],
+    "basicSteps": [
+      "Agave harvesting and cooking",
+      "Juice extraction",
+      "Fermentation",
+      "Distillation"
+    ]
+  },
+  "vodka": {
+    "id": "vodka",
+    "title": "Vodka",
+    "backgroundImage": "/assets/HowTo/img/vodka.jpg",
+    "description": "A clear spirit made from fermented grains or potatoes",
+    "difficulty": "Expert",
+    "fermentationTime": "1-2 weeks + distillation",
+    "alcoholContent": "37.5-40%",
+    "ingredients": [
+      "Potatoes or grains",
+      "Yeast",
+      "Water"
+    ],
+    "basicSteps": [
+      "Mash preparation",
+      "Fermentation",
+      "Multiple distillation",
+      "Filtering"
+    ]
+  },
+  "whiskey": {
+    "id": "whiskey",
+    "title": "Whiskey",
+    "backgroundImage": "/assets/HowTo/img/whiskey.jpg",
+    "description": "A spirit made from fermented grain mash",
+    "difficulty": "Expert",
+    "fermentationTime": "1-2 weeks + distillation and aging",
+    "alcoholContent": "40-68%",
+    "ingredients": [
+      "Grains (barley, corn, rye, or wheat)",
+      "Yeast",
+      "Water"
+    ],
+    "basicSteps": [
+      "Malting",
+      "Mashing",
+      "Fermentation",
+      "Distillation",
+      "Aging"
+    ]
+  },
+  "wine": {
+    "id": "wine",
+    "title": "Wine",
+    "backgroundImage": "/assets/HowTo/img/wine.jpg",
+    "description": "An alcoholic beverage made from fermented grape juice",
+    "difficulty": "Intermediate",
+    "fermentationTime": "2-8 weeks",
+    "alcoholContent": "11-14%",
+    "ingredients": [
+      "Grapes",
+      "Yeast",
+      "Optional sugar"
+    ],
+    "basicSteps": [
+      "Crushing and pressing",
+      "Fermentation",
+      "Aging",
+      "Bottling"
+    ]
+  }
+}
