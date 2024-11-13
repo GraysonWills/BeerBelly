@@ -1,0 +1,40 @@
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.results-grid.fade {
+  opacity: 0;
+}
+
+.result-card {
+  background: white;
+  border: 1px solid #9E4113;
+  border-radius: 8px;
+  padding: 15px;
+  transition: transform 0.2s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(158, 65, 19, 0.1);
+}
+
+.result-card h3 {
+  color: #9E4113;
+  margin-bottom: 10px;
+}
+
+.result-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #666;
+}
+
+.result-details span {
+  font-size: 0.9rem;
+}
