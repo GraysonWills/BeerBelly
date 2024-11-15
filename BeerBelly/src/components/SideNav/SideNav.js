@@ -1,22 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
+import NavFilters from './NavFilters';
+import TypeFilters from './TypeFilters';
+import ABVSlider from './ABVSlider';
 import './SideNav.css';
+  const SideNav = ({ selected, onSelect, onPremiumClick, onTypeSelect, onAbvChange}) => {
+    const [isOpen, setIsOpen] = useState(true);
 
-const SideNav = ({ selected, onSelect }) => {
-  const options = ['Beer', 'Liquor', 'Wine'];
+    const handleTypeSelect = (types) => {
+      onTypeSelect(types);
+    };
 
-  return (
-    <div className="side-nav">
-      {options.map((option) => (
-        <div
-          key={option}
-          className={`nav-item ${selected === option ? 'selected' : ''}`}
-          onClick={() => onSelect(option)}
+    const handleAbvChange = (range) => {
+      onAbvChange(range);
+    };
+
+    return (
+    <div className="pad">
+      <div className={`side-nav ${isOpen ? '' : 'closed'}`}>
+        <button 
+          className="toggle-button"
+          onClick={() => setIsOpen(!isOpen)}
         >
-          {option}
+          {isOpen ? '←' : '→'}
+        </button>
+        <div className="nav-content">
+          <NavFilters 
+            selected={selected}
+            onSelect={onSelect}
+            onPremiumClick={onPremiumClick}
+          />
+          <TypeFilters 
+            selectedCategory={selected}
+            onTypeSelect={handleTypeSelect}
+            onPremiumClick={onPremiumClick}
+          />
+          <ABVSlider 
+            selectedType={selected}
+            onRangeChange={onAbvChange}
+            handleAbvChange={handleAbvChange}
+            onPremiumClick={onPremiumClick}
+          />
         </div>
-      ))}
-    </div>
-  );
-};
-
-export default SideNav;
+      </div>
+      </div>
+    );
+};export default SideNav;

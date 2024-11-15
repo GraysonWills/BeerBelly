@@ -9,20 +9,43 @@
 .results-grid.fade {
   opacity: 0;
 }
+  .result-card {
+    background: white;
+    border: 1px solid #9E4113;
+    border-radius: 8px;
+    padding: 15px;
+    transition: transform 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
 
-.result-card {
-  background: white;
-  border: 1px solid #9E4113;
-  border-radius: 8px;
-  padding: 15px;
-  transition: transform 0.2s ease;
-}
+  .result-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: linear-gradient(to top, #9E4113 0%, rgba(158, 65, 19, 0.8) 100%);
+    transition: height 0.3s ease;
+    z-index: -1;
+  }
 
-.result-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(158, 65, 19, 0.1);
-}
+  .result-card:hover::before {
+    height: 100%;
+  }
 
+  .result-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(158, 65, 19, 0.1);
+  }
+
+  .result-card:hover h3,
+  .result-card:hover .result-details span {
+    color: white;
+    transition: color 0.3s ease;
+  }
 .result-card h3 {
   color: #9E4113;
   margin-bottom: 10px;

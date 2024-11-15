@@ -9,6 +9,8 @@ import './AlcoholSearch.css';
 
 const AlcoholSearch = () => {
   const [selectedType, setSelectedType] = useState('Beer');
+  const [selectedSubTypes, setSelectedSubTypes] = useState([]);
+  const [abvRange, setAbvRange] = useState([0, 100]);
   const [showPaymentPopup, setShowPaymentPopup] = useState(false);
   const [showError, setShowError] = useState(false);
 
@@ -26,10 +28,20 @@ const AlcoholSearch = () => {
     <div className="alcohol-search-container">
       <Header />
       <div className="alcohol-search">
-        <SideNav selected={selectedType} onSelect={setSelectedType} />
+        <SideNav 
+          selected={selectedType} 
+          onSelect={setSelectedType}
+          onPremiumClick={() => setShowPaymentPopup(true)}
+          onTypeSelect={setSelectedSubTypes}
+          onAbvChange={setAbvRange}
+        />
         <div className="main-content">
           <SearchBar onSearch={handleSearch} />
-          <SearchResults />
+          <SearchResults 
+            selectedType={selectedType}
+            selectedSubTypes={selectedSubTypes}
+            abvRange={abvRange}
+          />
         </div>
       </div>
       <PaymentPopup
@@ -39,10 +51,8 @@ const AlcoholSearch = () => {
       />
       <ErrorMessage
         isVisible={showError}
-        message="Sorry, our payment processing is not available right now. Please come back soon and try again."
+        message="Sorry, our payment processing is not available right now. Please come back and try again soon."
       />
     </div>
   );
-};
-
-export default AlcoholSearch;
+};export default AlcoholSearch;
