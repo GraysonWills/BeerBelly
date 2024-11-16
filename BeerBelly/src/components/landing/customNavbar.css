@@ -1,0 +1,20 @@
+.custom-navbar {
+    background-color: #FBB117 !important;
+    border-bottom: 2px solid #9E4113;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Navbar link styling */
+  .custom-nav-links .nav-link {
+    color: #9E4113 !important;
+    font-weight: bold;
+    font-size: 20px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  
+  /* Hover effect to make text brighter */
+  .custom-nav-links .nav-link:hover {
+    color: #d2562c !important; /* Slightly lighter shade */
+    text-shadow: 0px 0px 3px rgba(255, 170, 125, 0.8);
+  }
+  
