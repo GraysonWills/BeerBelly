@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import logo from '/assets/LandingPage/logo.png'; // Ensure the logo is in the correct path
-import navlinks from '../../content/navlinks.json'; // Import the navlinks JSON
-import './customNavbar.css'; // Import the custom CSS file
+import navlinks from '../../content/navlinks.json';
+import './customNavbar.css';
 
 const CustomNavbar = () => {
   const [links, setLinks] = useState([]);
 
   useEffect(() => {
-    // Set the links from navlinks.json
     setLinks(Object.entries(navlinks));
   }, []);
 
   return (
     <Navbar expand="lg" className="custom-navbar" sticky="top">
-      <Navbar.Brand href="/">
+      <Navbar.Brand as={Link} to="/">
         <img
           src={'/assets/LandingPage/logo.png'}
           alt="Logo"
@@ -28,7 +27,7 @@ const CustomNavbar = () => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ms-auto custom-nav-links">
           {links.map(([name, { link }]) => (
-            <Nav.Link key={name} href={link}>
+            <Nav.Link key={name} as={Link} to={link}>
               {name}
             </Nav.Link>
           ))}

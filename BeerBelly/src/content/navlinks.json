@@ -1,4 +1,7 @@
 {
+  "Home": {
+    "link": "/"
+  },
     "Find By Taste": {
       "link": "/find-by-taste"
     },
@@ -11,5 +14,6 @@
     "Recipes": {
       "link": "/recipes"
     }
+
   }
   

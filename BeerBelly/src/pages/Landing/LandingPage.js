@@ -7,7 +7,6 @@ import data from '../../content/info.json'; // Import the JSON data
 const LandingPage = () => {
   return (
     <div>
-      <CustomNavbar />
       <Hero />
       <div className="card-container">
         {Object.keys(data).map((key) => (
