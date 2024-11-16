@@ -1,5 +1,5 @@
 import React from 'react';
-import AlcoholSearch from '../../components/AlcoholSearch/AlcoholSearch';
+import AlcoholSearch from '../../components/ingredients/AlcoholSearch/AlcoholSearch';
 import './Home.css';
 
 const Home = () => {

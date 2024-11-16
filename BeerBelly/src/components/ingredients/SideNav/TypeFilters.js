@@ -20,7 +20,6 @@ const TypeFilters = ({ selectedCategory, onTypeSelect, onPremiumClick }) => {
           >
             <div className="button-content">
               <span>{type}</span>
-              <span className="lock-icon">🔒</span>
             </div>
           </button>
         ))}
