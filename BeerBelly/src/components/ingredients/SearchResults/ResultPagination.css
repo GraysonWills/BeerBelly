@@ -1,0 +1,109 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+  padding: 20px 0;
+  position: sticky;
+  bottom: 0;
+  background: white;
+}
+
+.page-button {
+  padding: 4px 10px;
+  min-width: 32px;
+  height: 32px;
+  border: 1px solid #9E4113;
+  background: white;
+  color: #9E4113;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.page-button.active {
+  background: #9E4113;
+  color: white;
+}
+
+.page-button:hover {
+  background: #9E4113;
+  color: white;
+}
+
+.nav-arrow {
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 0.8;
+  padding: 4px 8px;
+}
+
+.nav-arrow:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nav-arrow:not(:disabled):hover {
+  background: #9E4113;
+  color: white;
+}
+
+.page-ellipsis {
+  padding: 4px 8px;
+  color: #9E4113;
+}
+
+.page-input {
+  width: 40px;
+  padding: 2px 4px;
+  border: 1px solid #9E4113;
+  border-radius: 4px;
+  text-align: center;
+  color: #9E4113;
+}
+
+.page-input:focus {
+  outline: none;
+  border-color: #9E4113;
+}
+
+/* For underline option */
+.interactive {
+  border-bottom: 2px solid #9E4113;
+}
+
+.tooltip-container {
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 10px;
+  background: #9E4113;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+  margin-bottom: 8px;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #9E4113 transparent transparent transparent;
+}
+
+.tooltip-container:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
