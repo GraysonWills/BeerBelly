@@ -13,6 +13,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    text-align: center;
   }
 
   .dropdown-arrow {
@@ -42,9 +43,12 @@
   transition: all 0.3s ease-in-out;
   opacity: 0;
   transform: scaleY(0);
+  text-align: center;
 }
 
-.dropdown-content.open {
+.dropdown-item {
+  text-align: center;
+}.dropdown-content.open {
   opacity: 1;
   transform: scaleY(1);
 }
@@ -76,4 +80,14 @@
 .dropdown-item.locked:hover {
   background-color: #fff0e8;
   opacity: 0.8;
+}
+
+@media screen and (max-width: 768px) {
+  .dropdown-arrow {
+    transition: none;
+  }
+
+  .dropdown-content {
+    transition: none;
+  }
 }

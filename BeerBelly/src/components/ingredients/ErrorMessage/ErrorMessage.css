@@ -8,6 +8,7 @@
   padding: 15px 30px;
   border-radius: 4px;
   animation: slideUp 0.3s ease-in-out;
+  z-index: 1000;
 }
 
 @keyframes slideUp {

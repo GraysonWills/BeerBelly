@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import navlinks from '../../content/navlinks.json';
+import navlinks from '../content/navlinks.json';
 import './customNavbar.css';
 
 const CustomNavbar = () => {

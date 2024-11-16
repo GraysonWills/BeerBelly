@@ -25,9 +25,9 @@ const AlcoholSearch = () => {
   };
 
   return (
-    <div className="alcohol-search-container">
+    <div className="alcohol-search-container" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
       <Header />
-      <div className="alcohol-search">
+      <div className="alcohol-search" style={{ flex: 1 }}>
         <SideNav 
           selected={selectedType} 
           onSelect={setSelectedType}
@@ -54,5 +54,4 @@ const AlcoholSearch = () => {
         message="Sorry, our payment processing is not available right now. Please come back and try again soon."
       />
     </div>
-  );
-};export default AlcoholSearch;
+  );};export default AlcoholSearch;

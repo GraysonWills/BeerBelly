@@ -45,7 +45,14 @@ const ResultPagination = ({ currentPage, totalPages, handlePageChange }) => {
                   onChange={(e) => setInputValue(e.target.value)}
                   className="page-input"
                   autoFocus
-                  onBlur={() => setShowInput(false)}
+                  onBlur={() => {
+                    const pageNum = parseInt(inputValue);
+                    if (pageNum >= 1 && pageNum <= totalPages) {
+                      handlePageChange(pageNum);
+                    }
+                    setShowInput(false);
+                    setInputValue('');
+                  }}
                 />
               </form>
             ) : (
@@ -67,7 +74,7 @@ const ResultPagination = ({ currentPage, totalPages, handlePageChange }) => {
             >
             {showInput ? (
                 <form onSubmit={handleInputSubmit}>
-                <input
+                  <input
                     type="number"
                     min="1"
                     max={totalPages}
@@ -75,7 +82,14 @@ const ResultPagination = ({ currentPage, totalPages, handlePageChange }) => {
                     onChange={(e) => setInputValue(e.target.value)}
                     className="page-input"
                     autoFocus
-                    onBlur={() => setShowInput(false)}
+                    onBlur={() => {
+                      const pageNum = parseInt(inputValue);
+                      if (pageNum >= 1 && pageNum <= totalPages) {
+                        handlePageChange(pageNum);
+                      }
+                      setShowInput(false);
+                      setInputValue('');
+                    }}
                 />
                 </form>
             ) : (
@@ -117,14 +131,14 @@ const ResultPagination = ({ currentPage, totalPages, handlePageChange }) => {
         className="page-button nav-arrow"
         disabled={currentPage === 1}
       >
-        ‹‹
+        <span>‹‹</span>
       </button>
       <button 
         onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
         className="page-button nav-arrow"
         disabled={currentPage === 1}
       >
-        ‹
+        <span>‹</span>
       </button>
       
       {renderPageNumbers()}
@@ -134,14 +148,14 @@ const ResultPagination = ({ currentPage, totalPages, handlePageChange }) => {
         className="page-button nav-arrow"
         disabled={currentPage === totalPages}
       >
-        ›
+        <span>›</span>
       </button>
       <button 
         onClick={() => handlePageChange(totalPages)}
         className="page-button nav-arrow"
         disabled={currentPage === totalPages}
       >
-        ››
+        <span>››</span>
       </button>
     </div>
   );

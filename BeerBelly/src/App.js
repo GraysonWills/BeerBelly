@@ -2,7 +2,8 @@
   import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
   import LandingPage from './pages/Landing/LandingPage';
   import Home from './pages/Home/Home';
-  import CustomNavbar from './components/landing/Navbar';
+  import CustomNavbar from './components/Navbar';
+  import Footer from './components/Footer';
   import navlinks from './content/navlinks.json';
 
   function App() {
@@ -16,21 +17,26 @@
     };
 
     return (
+      <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Router>
-        <CustomNavbar />
-        <Routes>
-          {/* Landing page route */}
-          <Route path="/" element={<LandingPage />} />
-          {/* Dynamic routes from navlinks.json */}
-          {Object.entries(navlinks).map(([name, { link }]) => (
-            <Route 
-              key={name} 
-              path={link} 
-              element={pageComponents[name]} 
-            />
-          ))}
-        </Routes>
+        
+          <CustomNavbar style={{ position: 'sticky', top: 0, zIndex: 1000 }}/>
+          
+          <Routes>
+            {/* Landing page route */}
+            <Route path="/" element={<LandingPage />} />
+            {/* Dynamic routes from navlinks.json */}
+            {Object.entries(navlinks).map(([name, { link }]) => (
+              <Route 
+                key={name} 
+                path={link} 
+                element={pageComponents[name]} 
+              />
+            ))}
+          </Routes>
+      
       </Router>
+      </div>
     );
   }
 

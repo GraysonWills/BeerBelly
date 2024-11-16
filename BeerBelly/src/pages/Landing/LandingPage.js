@@ -1,7 +1,9 @@
 import React from "react";
-import CustomNavbar from "../../components/landing/Navbar";
+import CustomNavbar from "../../components/Navbar";
 import Hero from '../../components/landing/Hero/Hero';
 import InfoCard from '../../components/landing/InfoCard/InfoCard';
+import Footer from '../../components/Footer';
+
 import data from '../../content/info.json'; // Import the JSON data
 
 const LandingPage = () => {
@@ -13,6 +15,7 @@ const LandingPage = () => {
           <InfoCard key={key} descriptor={key} data={data} />
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

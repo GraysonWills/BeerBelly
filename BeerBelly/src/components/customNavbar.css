@@ -2,6 +2,9 @@
     background-color: #FBB117 !important;
     border-bottom: 2px solid #9E4113;
     font-family: 'Segoe UI', sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
   
   /* Navbar link styling */

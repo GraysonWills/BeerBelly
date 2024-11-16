@@ -4,7 +4,7 @@ import './Home.css';
 
 const Home = () => {
   return (
-    <div className="home">
+    <div className="home" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
       <AlcoholSearch />
     </div>
   );
