@@ -1,0 +1,23 @@
+.modal-content {
+    border-radius: 12px;
+}
+
+.modal-header {
+    border-bottom: 2px solid #FBB117;
+}
+
+.modal-title {
+    color: #9E4113;
+    font-weight: 600;
+}
+
+.learn-more-btn {
+    color: #9E4113;
+    border-color: #9E4113;
+}
+
+.learn-more-btn:hover {
+    background: #9E4113;
+    border-color: #9E4113;
+    color: white;
+}

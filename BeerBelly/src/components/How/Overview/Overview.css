@@ -1,0 +1,27 @@
+.overview-content .description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.stats .stat-item {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-label {
+    font-weight: 600;
+    color: #666;
+}
+
+.stat-value {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    background: #f8f8f8;
+}
+
+.difficulty-beginner { color: #28a745; }
+.difficulty-intermediate { color: #ffc107; }
+.difficulty-advanced, .difficulty-expert { color: #dc3545; }

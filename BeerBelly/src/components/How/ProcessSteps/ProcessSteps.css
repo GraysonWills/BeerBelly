@@ -1,0 +1,53 @@
+.steps-container {
+    padding: 1rem 0;
+}
+
+.step-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+
+.step-item:hover {
+    transform: translateY(-2px);
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.step-number {
+    background: #9E4113;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    font-weight: bold;
+}
+
+.step-description {
+    color: #666;
+    margin: 0.5rem 0;
+    padding-left: 2.5rem;
+}
+
+.learn-more-link {
+    color: #FBB117 !important;
+    padding-left: 2.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.learn-more-link:hover {
+    color: #9E4113 !important;
+}

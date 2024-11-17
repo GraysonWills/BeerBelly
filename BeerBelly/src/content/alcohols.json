@@ -8,18 +8,68 @@
     "fermentationTime": "2-6 weeks",
     "alcoholContent": "3-12%",
     "ingredients": [
-      "Malted barley",
-      "Hops",
-      "Yeast",
-      "Water"
+      "Malted barley (2-row or 6-row)",
+      "Hops (bittering and aroma varieties)",
+      "Brewing yeast (ale or lager strain)",
+      "Filtered water",
+      "Optional: specialty grains, adjuncts"
     ],
     "basicSteps": [
-      "Malting",
-      "Mashing",
-      "Boiling",
-      "Fermentation",
-      "Bottling"
-    ]
+      "Malting - Soak and germinate barley to activate enzymes",
+      "Mashing - Heat crushed grains in water (144-158°F) to convert starches to sugars",
+      "Boiling - Add hops and boil wort for 60-90 minutes",
+      "Fermentation - Cool wort and pitch yeast (65-75°F for ales)",
+      "Bottling - Package beer with priming sugar for carbonation"
+    ],
+    "stepDetails": {
+      "malting": {
+        "title": "Malting Process",
+        "description": "Barley is steeped in water for 40-48 hours, then spread out to germinate for 4-5 days at controlled temperature and humidity. During germination, enzymes are activated that will later convert starches to fermentable sugars. The grain is then kiln-dried to halt germination and develop color and flavor.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Malt"
+      },
+      "mashing": {
+        "title": "Mashing Process",
+        "description": "Crushed malted grains are mixed with hot water in a temperature-controlled environment. Different temperature rests activate specific enzymes: beta-amylase (140-149°F) for highly fermentable wort, alpha-amylase (154-162°F) for more body and residual sweetness.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Mashing"
+      },
+      "boiling": {
+        "title": "Wort Boiling",
+        "description": "The sweet liquid (wort) is boiled vigorously for 60-90 minutes. Hops are added at different times: bittering hops at the start, flavor hops in the middle, and aroma hops near the end. The boil sterilizes the wort, concentrates sugars, and isomerizes hop compounds.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Wort"
+      },
+      "fermentation": {
+        "title": "Fermentation",
+        "description": "Cooled wort is transferred to a fermenter and yeast is added. Ale yeasts work best at 65-75°F, while lager yeasts prefer 45-55°F. Primary fermentation takes 3-7 days, followed by conditioning period. The yeast converts sugars to alcohol and CO2 while producing flavor compounds.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Brewing#Fermentation"
+      },
+      "bottling": {
+        "title": "Bottling Process",
+        "description": "Beer is packaged with precise amounts of priming sugar to achieve desired carbonation levels. Bottles are filled with minimal oxygen exposure and capped securely. The residual yeast ferments the priming sugar to naturally carbonate the beer over 1-2 weeks.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Bottle_conditioning"
+      }
+    },
+    "ingredientDetails" : {
+      "maltedBarley": {
+        "title": "Malted Barley",
+        "description": "The foundation of beer, malted barley provides fermentable sugars and enzymes necessary for brewing. Different roast levels create various colors and flavors, from light pilsner malt to dark roasted barley.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Malt"
+      },
+      "hops": {
+        "title": "Hops",
+        "description": "Flowers of the hop plant that provide bitterness, flavor, and aroma to beer. Also act as a natural preservative. Different varieties offer unique characteristics from floral to citrus to pine.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Hops"
+      },
+      "yeast": {
+        "title": "Brewing Yeast",
+        "description": "Microorganisms that convert sugars into alcohol and CO2. Two main types: ale yeast (top-fermenting) and lager yeast (bottom-fermenting), each producing distinct flavor profiles.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Brewer%27s_yeast"
+      },
+      "water": {
+        "title": "Filtered Water",
+        "description": "The main component of beer, water's mineral content significantly impacts flavor and brewing efficiency. Different beer styles traditionally developed around local water profiles.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Brewing#Water"
+      }
+    }
   },
   "brandy": {
     "id": "brandy",
@@ -30,14 +80,62 @@
     "fermentationTime": "3-4 weeks + distillation",
     "alcoholContent": "35-60%",
     "ingredients": [
-      "Wine or fruit juice",
-      "Yeast"
+      "High-quality wine or fruit wine",
+      "Wine yeast (for fruit brandies)",
+      "Oak barrels for aging",
+      "Pure water for dilution"
     ],
     "basicSteps": [
-      "Fermentation",
-      "Distillation",
-      "Aging"
-    ]
+      "Base Preparation - Select and prepare wine",
+      "Distillation - Double distillation process",
+      "Aging - Mature in oak barrels",
+      "Blending - Create final product",
+      "Finishing - Adjust proof and bottle"
+    ],
+    "stepDetails": {
+      "basePreparation": {
+        "title": "Base Wine Selection",
+        "description": "Quality wine is selected for distillation. For fruit brandies, fresh fruit is crushed and fermented. The base wine significantly impacts final character. Proper acid and sugar balance is crucial.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Brandy#Production"
+      },
+      "distillation": {
+        "title": "Brandy Distillation",
+        "description": "First distillation concentrates alcohol to about 30%. Second distillation in copper pot stills reaches 65-70%. Careful cuts separate heads, hearts, and tails. Temperature control is crucial for flavor development.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Pot_still"
+      },
+      "aging": {
+        "title": "Oak Aging",
+        "description": "New spirit ages in oak barrels, often Limousin or American oak. Aging develops color, smoothness, and complexity. Duration varies from 2 years to decades. Regular monitoring ensures proper development.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Aging_of_wine"
+      },
+      "blending": {
+        "title": "Master Blending",
+        "description": "Different aged brandies are blended to achieve desired character. Master blenders maintain house style consistency. Age statements reflect youngest brandy in blend.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Brandy#Types_and_varieties"
+      }
+    },
+    "ingredientDetails": {
+      "wine": {
+        "title": "Base Wine",
+        "description": "High-quality wine forms the foundation of brandy. The wine's characteristics directly influence the final spirit's flavor profile. Traditional grape varieties include Ugni Blanc, Colombard, and Folle Blanche.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Wine"
+      },
+      "yeast": {
+        "title": "Wine Yeast",
+        "description": "Specialized strains of Saccharomyces cerevisiae convert fruit sugars to alcohol during the initial fermentation phase. Different strains produce varying flavor compounds.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Wine_yeast"
+      },
+      "oak": {
+        "title": "Oak Barrels",
+        "description": "Essential for aging brandy, oak barrels contribute vanilla, spice, and tannin compounds while allowing controlled oxidation. Different oak species and toast levels affect flavor development.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Oak_(wine)"
+      },
+      "water": {
+        "title": "Pure Water",
+        "description": "Used to adjust the final proof of the brandy. Water quality and mineral content can affect the spirit's mouthfeel and flavor integration.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Dilution_(alcohol)"
+      }
+    }
   },
   "cider": {
     "id": "cider",
@@ -48,15 +146,63 @@
     "fermentationTime": "2-4 weeks",
     "alcoholContent": "4.5-7%",
     "ingredients": [
-      "Apple juice",
-      "Yeast",
-      "Optional sugar"
+      "Fresh apple juice (specific varieties)",
+      "Cider yeast or wine yeast",
+      "Optional: Pectic enzyme",
+      "Optional: Sulfites",
+      "Optional: Sugar for adjustment"
     ],
     "basicSteps": [
-      "Juice preparation",
-      "Fermentation",
-      "Bottling"
-    ]
+      "Fruit Selection - Choose appropriate apples",
+      "Pressing - Extract juice from apples",
+      "Fermentation - Convert sugars to alcohol",
+      "Aging - Develop flavor and clarity",
+      "Packaging - Bottle or keg final product"
+    ],
+    "stepDetails": {
+      "fruitSelection": {
+        "title": "Apple Selection",
+        "description": "Specific apple varieties are chosen for sugar content, acidity, and tannins. Blend of varieties creates complexity. Apples must be ripe and free from rot. Traditional cider apples are preferred.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Cider_apple"
+      },
+      "pressing": {
+        "title": "Juice Extraction",
+        "description": "Apples are washed, ground into pomace, then pressed. Clean equipment prevents contamination. Juice is tested for sugar content and acidity. Pectic enzyme may be added to improve extraction and clarity.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Fruit_press"
+      },
+      "fermentation": {
+        "title": "Cider Fermentation",
+        "description": "Juice ferments at 60-65°F. Wild yeast or cultured strains convert sugars to alcohol. Fermentation takes 1-2 weeks. Temperature control affects flavor development. Nutrients may be added if needed.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Cider#Production"
+      },
+      "aging": {
+        "title": "Maturation",
+        "description": "Cider ages for clarity and flavor development. Duration varies from weeks to months. Some producers age in oak. Regular tasting monitors progress. Racking removes sediment.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Aging_of_wine#Cider"
+      }
+    },
+    "ingredientDetails": {
+      "apples": {
+        "title": "Fresh Apple Juice",
+        "description": "Made from specific apple varieties bred for cider making, containing ideal balance of sugars, tannins, and acids. Traditional varieties include Kingston Black, Dabinett, and Yarlington Mill.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Cider_apple"
+      },
+      "yeast": {
+        "title": "Cider Yeast",
+        "description": "Specialized strains that thrive in apple juice conditions, producing clean fermentation and enhancing fruit character. Can be wild or cultured strains.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Cider#Fermentation"
+      },
+      "enzyme": {
+        "title": "Pectic Enzyme",
+        "description": "Breaks down pectin in apple juice, improving juice extraction and final clarity. Essential for commercial production and clear ciders.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Pectinase"
+      },
+      "sulfites": {
+        "title": "Sulfites",
+        "description": "Preservative that inhibits wild yeast and bacteria, protecting cider from spoilage. Also acts as an antioxidant during aging.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Sulfites_in_wine"
+      }
+    }
   },
   "gin": {
     "id": "gin",
@@ -67,15 +213,59 @@
     "fermentationTime": "Base spirit + infusion time",
     "alcoholContent": "37.5-50%",
     "ingredients": [
-      "Base spirit",
-      "Juniper berries",
-      "Botanicals"
+      "Neutral grain spirit (base)",
+      "Juniper berries (required)",
+      "Coriander seeds",
+      "Citrus peel",
+      "Various botanicals (angelica, orris root, etc.)",
+      "Pure water for dilution"
     ],
     "basicSteps": [
-      "Base spirit preparation",
-      "Botanical infusion",
-      "Distillation"
-    ]
+      "Base Spirit - Create or source neutral spirit",
+      "Botanical Prep - Select and prepare botanicals",
+      "Flavoring - Infuse spirit with botanicals",
+      "Distillation - Capture botanical essences",
+      "Finishing - Blend and adjust proof"
+    ],
+    "stepDetails": {
+      "baseSpirit": {
+        "title": "Base Spirit Production",
+        "description": "High-quality neutral spirit is produced or sourced. Must be clean and pure as it carries botanical flavors. Typically grain-based, distilled to 96% ABV.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Neutral_spirit"
+      },
+      "botanicalPrep": {
+        "title": "Botanical Preparation",
+        "description": "Juniper berries and other botanicals are carefully selected and prepared. Some are crushed to release oils, others left whole. Proportions are crucial for balanced flavor.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Gin#Botanical_properties"
+      },
+      "distillation": {
+        "title": "Gin Distillation",
+        "description": "Spirit is redistilled with botanicals. Vapor infusion uses botanical baskets above spirit. Cuts are made to capture desired flavors. Each distillery has unique methods.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Gin#Production_methods"
+      }
+    },
+    "ingredientDetails": {
+      "spirit": {
+        "title": "Neutral Grain Spirit",
+        "description": "High-proof base alcohol distilled to near neutrality, providing clean canvas for botanical flavors. Usually made from wheat, corn, or other grains.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Neutral_spirit"
+      },
+      "juniper": {
+        "title": "Juniper Berries",
+        "description": "The defining botanical of gin, providing distinctive pine and resinous notes. Must be the predominant flavor by law in most countries.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Juniper_berry"
+      },
+      "coriander": {
+        "title": "Coriander Seeds",
+        "description": "Second most common gin botanical, adding citrus and nutty notes. Works synergistically with juniper to create classic gin profile.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Coriander"
+      },
+      "botanicals": {
+        "title": "Various Botanicals",
+        "description": "Blend of roots, herbs, spices, and peels that create gin's complex flavor profile. Common ingredients include angelica root, orris root, citrus peel, and cardamom.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Gin#Botanical_properties"
+      }
+    }
   },
   "mead": {
     "id": "mead",
@@ -86,15 +276,58 @@
     "fermentationTime": "2-3 months",
     "alcoholContent": "8-20%",
     "ingredients": [
-      "Honey",
-      "Water",
-      "Yeast"
+      "Raw or wildflower honey",
+      "Wine or mead yeast",
+      "Pure water",
+      "Optional: Fruits or spices",
+      "Yeast nutrients"
     ],
     "basicSteps": [
-      "Must preparation",
-      "Fermentation",
-      "Aging"
-    ]
+      "Must Preparation - Mix honey and water",
+      "Fermentation - Convert honey sugars",
+      "Aging - Develop complexity",
+      "Clarification - Achieve clarity",
+      "Bottling - Package final product"
+    ],
+    "stepDetails": {
+      "mustPreparation": {
+        "title": "Must Creation",
+        "description": "Honey is mixed with water to achieve desired gravity. Temperature control prevents damage to honey compounds. Some producers heat must, others use raw process. Nutrients added to support fermentation.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Must#Mead"
+      },
+      "fermentation": {
+        "title": "Mead Fermentation",
+        "description": "Specialized yeast converts honey sugars to alcohol. Temperature maintained at 65-75°F. Primary fermentation takes 2-4 weeks. Nutrients added in stages. Gravity monitored regularly.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Mead#Production"
+      },
+      "aging": {
+        "title": "Aging Process",
+        "description": "Mead ages to develop complexity. Duration varies from months to years. Temperature control prevents oxidation. Some producers age in oak. Regular tasting tracks development.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Aging_of_wine#Mead"
+      }
+    },
+    "ingredientDetails": {
+      "honey": {
+        "title": "Raw Honey",
+        "description": "The primary fermentable sugar source for mead. Different honey varieties (wildflower, orange blossom, buckwheat) create distinct flavor profiles and characteristics.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Honey#Fermentation"
+      },
+      "yeast": {
+        "title": "Mead Yeast",
+        "description": "Specialized strains capable of fermenting high-sugar environments. Selected for alcohol tolerance and ability to preserve honey character.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Mead#Production"
+      },
+      "water": {
+        "title": "Pure Water",
+        "description": "Used to dilute honey to proper fermentation density. Water chemistry affects fermentation and final flavor profile.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Mead#Preparation"
+      },
+      "nutrients": {
+        "title": "Yeast Nutrients",
+        "description": "Essential additions providing nitrogen and minerals needed for healthy fermentation, as honey lacks natural yeast nutrients.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Yeast_assimilable_nitrogen"
+      }
+    }
   },
   "rum": {
     "id": "rum",
@@ -106,14 +339,62 @@
     "alcoholContent": "40-75%",
     "ingredients": [
       "Molasses or sugarcane juice",
-      "Yeast",
-      "Water"
+      "Specialized rum yeast",
+      "Water",
+      "Optional: Dunder (fermentation residue)",
+      "Oak barrels for aging"
     ],
     "basicSteps": [
-      "Fermentation",
-      "Distillation",
-      "Aging"
-    ]
+      "Material Prep - Process sugar source",
+      "Fermentation - Convert sugars to alcohol",
+      "Distillation - Concentrate spirit",
+      "Aging - Develop character in barrels",
+      "Blending - Create final product"
+    ],
+    "stepDetails": {
+      "materialPrep": {
+        "title": "Raw Material Processing",
+        "description": "Molasses or fresh cane juice prepared for fermentation. Brix and pH adjusted. For agricole rum, cane juice must be processed quickly. Water quality impacts fermentation.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Rum#Production"
+      },
+      "fermentation": {
+        "title": "Rum Fermentation",
+        "description": "Unique yeast strains create rum's distinctive profile. Dunder may be added for complexity. Temperature control affects ester formation. Fermentation takes 24-72 hours.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Rum#Fermentation"
+      },
+      "distillation": {
+        "title": "Rum Distillation",
+        "description": "Pot still or column still distillation. Each method produces different style. Cuts carefully made to capture desired flavors. Multiple distillations may be used.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Rum#Distillation"
+      },
+      "aging": {
+        "title": "Barrel Aging",
+        "description": "Aging in oak develops color and flavor. Tropical climate accelerates aging. Different barrel types impact character. Some producers use solera system.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Rum#Aging"
+      }
+    },
+    "ingredientDetails": {
+      "molasses": {
+        "title": "Molasses/Sugarcane",
+        "description": "The primary source of fermentable sugars in rum. Molasses provides rich, complex flavors while fresh cane juice (used in rhum agricole) offers grassy, vegetal notes.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Molasses#Rum"
+      },
+      "yeast": {
+        "title": "Rum Yeast",
+        "description": "Specialized strains that produce desired ester profiles and flavor compounds. Many distilleries maintain proprietary cultures passed down through generations.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Rum#Fermentation"
+      },
+      "dunder": {
+        "title": "Dunder",
+        "description": "Residue from previous fermentations, adds complexity and traditional Jamaican rum character. Rich in compounds that promote ester formation.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Dunder"
+      },
+      "water": {
+        "title": "Water",
+        "description": "Used throughout production for dilution and proof adjustment. Many historic rum distilleries were established near pristine water sources.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Rum#Production"
+      }
+    }
   },
   "sake": {
     "id": "sake",
@@ -124,16 +405,58 @@
     "fermentationTime": "4-8 weeks",
     "alcoholContent": "14-16%",
     "ingredients": [
-      "Rice",
-      "Koji mold",
-      "Yeast",
-      "Water"
+      "Sake rice (specific varieties)",
+      "Koji mold (Aspergillus oryzae)",
+      "Sake yeast",
+      "Pure soft water",
+      "Lactic acid (traditional or cultured)"
     ],
     "basicSteps": [
-      "Rice polishing",
-      "Koji cultivation",
-      "Multiple parallel fermentation"
-    ]
+      "Rice Polishing - Mill rice to specific ratio",
+      "Koji Making - Cultivate koji on rice",
+      "Moto - Create yeast starter",
+      "Moromi - Main fermentation",
+      "Pressing - Separate sake from solids"
+    ],
+    "stepDetails": {
+      "ricePolishing": {
+        "title": "Rice Preparation",
+        "description": "Rice is polished to remove outer layers. Polishing ratio determines sake grade. Higher grades remove more outer portion. Rice is then washed and soaked precisely.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Sake#Production"
+      },
+      "kojiMaking": {
+        "title": "Koji Cultivation",
+        "description": "Steamed rice is inoculated with koji mold. Process takes 48 hours in koji room. Temperature and humidity carefully controlled. Koji converts rice starch to sugar.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Aspergillus_oryzae"
+      },
+      "moromi": {
+        "title": "Main Fermentation",
+        "description": "Three-stage process adds rice, koji, and water to starter. Multiple parallel fermentation occurs. Temperature kept low for clean flavor. Takes 18-32 days.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Sake#Fermentation"
+      }
+    },
+    "ingredientDetails": {
+      "rice": {
+        "title": "Sake Rice",
+        "description": "Special varieties grown specifically for sake brewing, with larger, starch-rich centers. The degree of polishing affects the final grade and character.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Sake_rice"
+      },
+      "koji": {
+        "title": "Koji Mold",
+        "description": "Aspergillus oryzae, essential for converting rice starch into fermentable sugars. Creates unique parallel fermentation process distinctive to sake.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Aspergillus_oryzae"
+      },
+      "yeast": {
+        "title": "Sake Yeast",
+        "description": "Specialized strains that produce desired flavor compounds and can ferment to high alcohol levels while maintaining delicate aromatics.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Sake#Production"
+      },
+      "water": {
+        "title": "Soft Water",
+        "description": "Specific mineral content crucial for sake brewing. Historic brewing regions were established around renowned water sources.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Sake#Water"
+      }
+    }
   },
   "tequila": {
     "id": "tequila",
@@ -144,18 +467,54 @@
     "fermentationTime": "3-5 days + distillation",
     "alcoholContent": "35-55%",
     "ingredients": [
-      "Blue agave",
-      "Yeast",
-      "Water"
+      "Blue Weber Agave",
+      "Specialized yeast strains",
+      "Pure spring water",
+      "Optional: Oak barrels for aging"
     ],
     "basicSteps": [
-      "Agave harvesting and cooking",
-      "Juice extraction",
-      "Fermentation",
-      "Distillation"
-    ]
+      "Harvesting - Select and harvest agave",
+      "Cooking - Process agave hearts",
+      "Extraction - Separate agave juice",
+      "Fermentation - Convert sugars to alcohol",
+      "Distillation - Double distillation process"
+    ],
+    "stepDetails": {
+      "harvesting": {
+        "title": "Agave Harvesting",
+        "description": "Blue Weber Agave harvested at 7-10 years. Jimadors select mature plants. Piñas (hearts) trimmed of leaves. Sugar content tested before processing.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Tequila#Production"
+      },
+      "cooking": {
+        "title": "Agave Cooking",
+        "description": "Piñas steam-cooked in traditional ovens or autoclaves. Process converts complex carbohydrates to simple sugars. Cooking develops characteristic flavors. Takes 24-48 hours.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Tequila#Production_process"
+      },
+      "distillation": {
+        "title": "Double Distillation",
+        "description": "First distillation creates ordinario. Second distillation concentrates and purifies. Copper pot stills traditional. Cuts made to capture heart of distillation.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Tequila#Distillation"
+      }
+    },
+    "ingredientDetails": {
+      "agave": {
+        "title": "Blue Weber Agave",
+        "description": "The heart (piña) of the blue agave plant, harvested after 7-10 years of growth. Must be grown in designated regions of Mexico for tequila designation.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Agave_tequilana"
+      },
+      "yeast": {
+        "title": "Tequila Yeast",
+        "description": "Strains selected for their ability to produce desired flavor compounds during fermentation of agave sugars. Can be proprietary or traditional strains.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Tequila#Production_process"
+      },
+      "water": {
+        "title": "Spring Water",
+        "description": "Natural spring water used throughout production process. Mineral content affects fermentation and final character of the spirit.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Tequila#Production"
+      }
+    }
   },
-  "vodka": {
+"vodka": {
     "id": "vodka",
     "title": "Vodka",
     "backgroundImage": "/assets/HowTo/img/vodka.jpg",
@@ -164,16 +523,58 @@
     "fermentationTime": "1-2 weeks + distillation",
     "alcoholContent": "37.5-40%",
     "ingredients": [
-      "Potatoes or grains",
-      "Yeast",
-      "Water"
+      "Base material (wheat, rye, corn, potato, or other)",
+      "Specialized distiller's yeast",
+      "Enzymes for starch conversion",
+      "Pure water for dilution",
+      "Activated carbon for filtering"
     ],
     "basicSteps": [
-      "Mash preparation",
-      "Fermentation",
-      "Multiple distillation",
-      "Filtering"
-    ]
+      "Preparation - Process raw materials",
+      "Conversion - Break down starches",
+      "Fermentation - Create alcohol base",
+      "Distillation - Multiple precise distillations",
+      "Filtration - Achieve pure character"
+    ],
+    "stepDetails": {
+      "preparation": {
+        "title": "Raw Material Processing",
+        "description": "Base ingredients are cleaned and processed. Potatoes are cooked to gelatinize starches, grains are milled and cooked. Quality of raw materials significantly impacts final product.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Vodka#Production"
+      },
+      "distillation": {
+        "title": "Multiple Distillation",
+        "description": "Wash undergoes multiple distillations in column stills. Each pass increases purity and alcohol content. Precise cuts remove unwanted compounds. Modern stills may have 20+ plates.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Vodka#Production_methods"
+      },
+      "filtration": {
+        "title": "Charcoal Filtration",
+        "description": "Spirit is filtered through activated carbon to remove remaining impurities. Multiple filtrations may be used. Water is added to achieve final proof. Temperature during filtration affects final character.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Vodka#Filtration"
+      }
+    },
+    "ingredientDetails": {
+      "base": {
+        "title": "Base Materials",
+        "description": "Various agricultural products can be used: wheat, rye, corn, potato, or other starch-rich materials. Each imparts subtle character to final spirit.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Vodka#Production"
+      },
+      "enzymes": {
+        "title": "Enzymes",
+        "description": "Convert complex starches into fermentable sugars. Can be naturally present in malted grains or added as commercial preparations.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Amylase"
+      },
+      "yeast": {
+        "title": "Distiller's Yeast",
+        "description": "Clean-fermenting strains selected for neutral flavor production and high alcohol tolerance. Critical for producing pure base spirit.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Distilled_beverage#Fermentation"
+      },
+      "carbon": {
+        "title": "Activated Carbon",
+        "description": "Used in filtration to remove congeners and achieve characteristic neutrality. Different types of carbon affect filtering efficiency.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Activated_carbon#Distilled_alcoholic_beverages"
+      }
+    }
   },
   "whiskey": {
     "id": "whiskey",
@@ -184,17 +585,63 @@
     "fermentationTime": "1-2 weeks + distillation and aging",
     "alcoholContent": "40-68%",
     "ingredients": [
-      "Grains (barley, corn, rye, or wheat)",
-      "Yeast",
-      "Water"
+      "Base grains (malted barley, corn, rye, or wheat)",
+      "Distiller's yeast",
+      "Filtered water",
+      "Optional: Peat for smoking malt",
+      "Oak barrels for aging"
     ],
     "basicSteps": [
-      "Malting",
-      "Mashing",
-      "Fermentation",
-      "Distillation",
-      "Aging"
-    ]
+      "Malting - Prepare grains for fermentation",
+      "Mashing - Convert starches to fermentable sugars",
+      "Fermentation - Create alcohol-rich wash",
+      "Distillation - Concentrate and purify alcohol",
+      "Aging - Mature in oak barrels"
+    ],
+    "stepDetails": {
+      "malting": {
+        "title": "Grain Malting",
+        "description": "Barley is soaked and allowed to germinate, developing enzymes needed for starch conversion. For peated whiskey, malted barley is dried over peat smoke. Temperature and moisture are carefully controlled throughout the process.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Malt_whisky#Malting"
+      },
+      "mashing": {
+        "title": "Whiskey Mashing",
+        "description": "Ground grains are mixed with hot water in a mash tun. Temperature rests activate enzymes that convert starches to fermentable sugars. The resulting sweet liquid (wort) is cooled and prepared for fermentation.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Mashing#Whisky_production"
+      },
+      "distillation": {
+        "title": "Whiskey Distillation",
+        "description": "The wash is distilled twice (or thrice) in copper pot stills. The first distillation (wash still) creates low wines. The second (spirit still) produces new make spirit. Careful cuts separate desired heart from heads and tails.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Whisky#Production"
+      },
+      "aging": {
+        "title": "Barrel Aging",
+        "description": "New make spirit ages in oak barrels, often for years. The wood imparts color and flavor while allowing slow oxidation. Temperature fluctuations drive spirit in and out of wood, extracting compounds. Legal minimum aging varies by type.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Whisky#Aging"
+      }
+    },
+    "ingredientDetails": {
+      "grains": {
+        "title": "Base Grains",
+        "description": "Different grains create distinct whiskey styles: barley for Scotch, corn for bourbon, rye for rye whiskey. Malted barley provides essential enzymes for conversion.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Whisky#Production:_Grain"
+      },
+      "yeast": {
+        "title": "Distiller's Yeast",
+        "description": "Proprietary strains that produce desired flavor compounds during fermentation. Each distillery maintains unique cultures contributing to house character.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Whisky#Yeast"
+      },
+      "water": {
+        "title": "Water",
+        "description": "Used throughout production from mashing to final dilution. Many historic distilleries were built near distinctive water sources.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Whisky#Water"
+      },
+      "peat": {
+        "title": "Peat",
+        "description": "Decomposed vegetation used to smoke malted barley in some Scotch whiskies. Imparts distinctive smoky, earthy flavors to final spirit.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Peat_in_whisky_production"
+      }
+    }
   },
   "wine": {
     "id": "wine",
@@ -205,15 +652,62 @@
     "fermentationTime": "2-8 weeks",
     "alcoholContent": "11-14%",
     "ingredients": [
-      "Grapes",
-      "Yeast",
-      "Optional sugar"
+      "Wine grapes (specific varietals)",
+      "Wine yeast (Saccharomyces cerevisiae)",
+      "Optional: Sulfites for preservation",
+      "Optional: Fining agents",
+      "Optional: Sugar for adjustment"
     ],
     "basicSteps": [
-      "Crushing and pressing",
-      "Fermentation",
-      "Aging",
-      "Bottling"
-    ]
+      "Harvesting - Pick grapes at optimal ripeness",
+      "Crushing - Process grapes to release juice",
+      "Fermentation - Convert grape sugars to alcohol",
+      "Pressing - Separate wine from grape solids",
+      "Aging - Develop complexity and character"
+    ],
+    "stepDetails": {
+      "harvesting": {
+        "title": "Grape Harvesting",
+        "description": "Grapes are harvested when they reach optimal sugar content (Brix), acidity, and phenolic ripeness. Timing is crucial - typically pre-dawn to preserve freshness. Hand-harvesting allows for selective picking, while machine harvesting is more efficient for larger operations.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Harvest_(wine)"
+      },
+      "crushing": {
+        "title": "Grape Crushing",
+        "description": "Grapes are destemmed and crushed to release juice. For white wines, grapes are pressed immediately. For reds, the juice ferments with skins and seeds for color and tannin extraction. Modern crushers are gentle to avoid bitter compounds from seeds.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Winemaking#Crushing"
+      },
+      "fermentation": {
+        "title": "Wine Fermentation",
+        "description": "Fermentation occurs at controlled temperatures: whites at 55-65°F, reds at 70-85°F. Wild yeast or cultured strains convert grape sugars to alcohol over 5-14 days. Red wines undergo malolactic fermentation for smoothness. Temperature control is crucial for flavor development.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Winemaking#Fermentation"
+      },
+      "aging": {
+        "title": "Wine Aging",
+        "description": "Wines age in tanks, barrels, or bottles. Oak barrels impart flavors and allow micro-oxygenation. Duration varies by style: whites typically 6-12 months, reds 1-2 years or more. Temperature and humidity control are essential for proper aging.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Aging_of_wine"
+      }
+    },
+    "ingredientDetails": {
+      "grapes": {
+        "title": "Wine Grapes",
+        "description": "Specific varieties of Vitis vinifera cultivated for winemaking. Different varieties offer unique flavor profiles, tannin levels, and acidity.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Wine_grape"
+      },
+      "yeast": {
+        "title": "Wine Yeast",
+        "description": "Saccharomyces cerevisiae strains selected for wine production. Can be native from grape skins or cultured strains chosen for specific characteristics.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Wine_yeast"
+      },
+      "sulfites": {
+        "title": "Sulfites",
+        "description": "Preservative compounds that protect wine from oxidation and microbial spoilage. Also help preserve color and freshness during aging.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Sulfites_in_wine"
+      },
+      "fining": {
+        "title": "Fining Agents",
+        "description": "Materials used to clarify wine by removing suspended particles. Traditional agents include egg whites, isinglass, and bentonite clay.",
+        "learnMoreUrl": "https://en.wikipedia.org/wiki/Fining_agent"
+      }
+    }
   }
 }
