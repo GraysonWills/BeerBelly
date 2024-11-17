@@ -1,0 +1,82 @@
+/* InfoCard container */
+.info-card {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 10px solid #9E4113;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* The filling effect (starts from bottom and grows upwards) */
+.info-card::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(251, 177, 23, 0.71);
+    transform: translateY(100%);
+    transition: transform 1s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+    border-radius: 50% 50% 0 0 / 10% 10% 0 0;
+}
+
+/* Hovered state */
+.info-card:hover::before {
+    transform: translateY(0);
+    border-radius: 0;
+}
+
+/* Text that appears after the fill animation */
+.info-card-text {
+    position: absolute;
+    width: 80%;
+    color: #9E4113;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    white-space: pre-line;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.5s ease, transform 1s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+/* Show text when hovered */
+.info-card:hover .info-card-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Disable animation and show content for phone-sized windows */
+@media (max-width: 600px) {
+    .info-card::before,
+    .info-card::after,
+    .info-card-text {
+        animation: none;
+        transition: none;
+    }
+
+    .info-card::before {
+        opacity: 1;
+        transform: none;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+        background-color: rgba(251, 177, 23, 0.71);
+    }
+
+    .info-card-text {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

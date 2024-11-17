@@ -1,0 +1,19 @@
+{
+  "Home": {
+    "link": "/"
+  },
+    "Find By Taste": {
+      "link": "/find-by-taste"
+    },
+    "How To": {
+      "link": "/how-to"
+    },
+    "Locations": {
+      "link": "/locations"
+    },
+    "Recipes": {
+      "link": "/recipes"
+    }
+
+  }
+  

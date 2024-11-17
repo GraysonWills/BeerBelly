@@ -1,0 +1,25 @@
+/* Hero section styling */
+.hero-section {
+    /* background-image: url('/assets/LandingPage/img/rack.jpg'); */
+    background-size: cover;
+    background-position: center;
+    height: 800px; /* Fixed height */
+    position: relative;
+  }
+  
+  /* Div at the bottom fourth of the image */
+  .hero-text {
+    background-color: #FBB117;
+    color: #9E4113;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 72px;
+    font-weight: bold;
+    text-align: center;
+    padding: 40px 0;  /* Keep this padding for the text area */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 2px solid #9E4113; /* 2px top border with specified color */
+    border-bottom: 10px solid #9E4113; /* 2px bottom border with specified color */
+  }
+  
