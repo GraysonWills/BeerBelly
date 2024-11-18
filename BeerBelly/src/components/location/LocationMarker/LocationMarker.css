@@ -1,0 +1,46 @@
+.location-marker-popup {
+  min-width: 200px;
+}
+
+.location-marker-popup h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+.location-marker-popup p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.location-marker-popup a {
+  display: inline-block;
+  margin-top: 8px;
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.location-marker-popup a:hover {
+  text-decoration: underline;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+}
+
+.leaflet-popup-content {
+  margin: 12px;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  color: #333;
+}
+
+.leaflet-marker-icon.selected {
+  filter: hue-rotate(30deg) brightness(1.2);
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+}
