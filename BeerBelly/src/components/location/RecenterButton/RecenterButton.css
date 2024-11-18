@@ -1,0 +1,37 @@
+  .control-button {
+    font-size: 14px;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    display: block;
+    width: 120px;
+    height: 40px;
+    background-color: #ffffff;
+    border: 2px solid #4a4a4a;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .recenter-button {
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+
+  .fade-in {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .fade-out {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  @media screen and (max-width: 768px) {
+    .recenter-button {
+      position: fixed;
+      top: 100px; /* Adjust this value based on your SearchBox height */
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+    }
+  }
