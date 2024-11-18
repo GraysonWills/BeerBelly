@@ -1,0 +1,57 @@
+  .distance-filter {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+
+  .distance-slider {
+    flex-grow: 1;
+    margin-right: 10px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: #ddd;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+  }
+
+  .distance-slider:hover {
+    opacity: 1;
+  }
+
+  .distance-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #9E4113;
+    /* background: #007bff; */
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  .distance-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #9E4113;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  .distance-input {
+    width: 50px;
+    text-align: center;
+    margin-right: 5px;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 3px;
+  }
+
+  .distance-filter span {
+    font-weight: bold;
+    color: #9E4113;
+  }
