@@ -2,7 +2,9 @@
     font-size: 14px;
     padding: 10px 15px;
     margin-bottom: 5px;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 120px;
     height: 40px;
     background-color: #ffffff;
@@ -29,7 +31,7 @@
   @media screen and (max-width: 768px) {
     .recenter-button {
       position: fixed;
-      top: 100px; /* Adjust this value based on your SearchBox height */
+      top: 170px; /* Adjust this value based on your SearchBox height */
       left: 50%;
       transform: translateX(-50%);
       z-index: 1000;

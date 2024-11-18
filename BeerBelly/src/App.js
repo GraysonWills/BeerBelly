@@ -4,10 +4,12 @@ import { AnimatePresence, motion } from 'framer-motion';
 import LandingPage from './pages/Landing/LandingPage';
 import Home from './pages/Home/Home';
 import HowTo from './pages/How/HowTo';
+import LocationServices from './pages/Location/LocationServices';
 import CustomNavbar from './components/Navbar';
 import Footer from './components/Footer';
 import navlinks from './content/navlinks.json';
 import ScrollToTop from './components/ScrollToTop';
+
 
 // Different animation variants
 const pageTransitions = {
@@ -63,7 +65,7 @@ const AnimatedRoutes = () => {
     Home: <Home />,
     "Find By Taste": <Home />,
     "How To": <HowTo />,
-    "Locations": <Home />,
+    "Locations": <LocationServices />,
     "Recipes": <Home />
   };
 

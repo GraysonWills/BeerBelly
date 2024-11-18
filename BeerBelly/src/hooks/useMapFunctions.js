@@ -31,13 +31,20 @@ export const useMapFunctions = (mapRef) => {
     if (mapRef.current) {
       const map = mapRef.current;
       const handleMoveEnd = () => {
-        const mapCenter = map.getCenter();
-        const allowedOffset = 0.001;
-        const isCloseEnough = 
-          markerPosition &&
-          Math.abs(mapCenter.lat - markerPosition[0]) < allowedOffset &&
-          Math.abs(mapCenter.lng - markerPosition[1]) < allowedOffset;
-        setIsMapCentered(isCloseEnough);
+        const currentZoom = map.getZoom();
+        const zoomThreshold = 10; // Adjust this value based on your needs
+
+        if (currentZoom >= zoomThreshold) {
+          const mapCenter = map.getCenter();
+          const allowedOffset = 0.001;
+          const isCloseEnough = 
+            markerPosition &&
+            Math.abs(mapCenter.lat - markerPosition[0]) < allowedOffset &&
+            Math.abs(mapCenter.lng - markerPosition[1]) < allowedOffset;
+          setIsMapCentered(isCloseEnough);
+        } else {
+          setIsMapCentered(true);
+        }
         setCurrentZoom(map.getZoom());
       };
       map.on('moveend', handleMoveEnd);

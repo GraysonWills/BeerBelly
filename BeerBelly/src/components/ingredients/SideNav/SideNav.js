@@ -8,7 +8,8 @@ import './SideNav.css';
 
     const handleTypeSelect = (types) => {
       onTypeSelect(types);
-    };
+
+      };
 
     const handleAbvChange = (range) => {
       onAbvChange(range);
@@ -18,10 +19,14 @@ import './SideNav.css';
     <div className="pad">
       <div className={`side-nav ${isOpen ? '' : 'closed'}`}>
         <button 
-          className="toggle-button"
+          className="togglebutton"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? '←' : '→'}
+            <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0H18V2H0V0Z" fill="currentColor"/>
+    <path d="M3 5H15V7H3V5Z" fill="currentColor"/>
+    <path d="M6 10H12V12H6V10Z" fill="currentColor"/>
+  </svg>
         </button>
         <div className="nav-content">
           <NavFilters 

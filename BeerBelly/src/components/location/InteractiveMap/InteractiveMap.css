@@ -1,7 +1,7 @@
 
   .interactive-map-container {
     position: relative;
-    height: 100vh;
+    height: calc(100vh - 78px);
     width: 100vw;
   }
 
