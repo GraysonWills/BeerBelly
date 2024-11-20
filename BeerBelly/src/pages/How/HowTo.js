@@ -8,9 +8,8 @@ const HowTo = () => {
   const toggleSection = (id) => {
     setActiveSection(activeSection === id ? null : id);
   };
-
   return (
-    <div className="how-to">
+    <div className="how-to" style={{ overflowX: 'hidden' }}>
       <header className="text-center py-4" style={{ 
         color: '#9E4113',
         borderBottom: '2px solid #9E4113'

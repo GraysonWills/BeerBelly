@@ -5,19 +5,47 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-  }
-  
-  /* Navbar link styling */
+    padding: 0 3% !important; /* This adds padding on both sides */
+}
+
+/* Navbar link styling */
+
+.navbar-brand {
+    margin-left: 0;
+}
+
+.custom-nav-links {
+    margin-right: 0;
+}
   .custom-nav-links .nav-link {
     color: #9E4113 !important;
     font-weight: bold;
     font-size: 20px;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 8px 32px; /* Doubled the horizontal padding */
+    margin: 0 8px; /* Added margin between buttons */
+  }
+  
+  .custom-nav-links .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #9E4113;
+    transition: width 0.3s ease;
   }
   
   /* Hover effect to make text brighter */
   .custom-nav-links .nav-link:hover {
-    color: #d2562c !important; /* Slightly lighter shade */
-    text-shadow: 0px 0px 3px rgba(255, 170, 125, 0.8);
+    color: #d2562c !important;
+    transform: translateY(-2px);
+    text-shadow: 2px 2px 4px rgba(158, 65, 19, 0.2);
+  }
+  
+  .custom-nav-links .nav-link:hover::before {
+    width: 100%;
   }
   

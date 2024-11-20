@@ -34,31 +34,29 @@ const AlcoholGuide = ({ descriptor, data, isExpanded, onToggle }) => {
           </div>
         </div>
       </div>
-      
-      <Collapse in={isExpanded}>
-        <div>
-          <Container fluid className="py-4">
-            <Row className="g-4">
-              <Col xs={12} md={4}>
-                <Overview alcohol={alcohol} />
-              </Col>
-              <Col xs={12} md={4}>
-                <Ingredients 
-                  alcohol={alcohol} 
-                  onIngredientClick={handleIngredientClick} 
-                />
-              </Col>
-              <Col xs={12} md={4}>
-                <ProcessSteps 
-                  alcohol={alcohol} 
-                  onStepClick={handleStepClick} 
-                />
-              </Col>
-            </Row>
-          </Container>
-        </div>
-      </Collapse>
-
+              <Collapse in={isExpanded}>
+                <div style={{ overflowX: 'hidden' }}>
+                  <Container fluid className="py-4">
+                    <Row className="g-4">
+                      <Col xs={12} md={4}>
+                        <Overview alcohol={alcohol} />
+                      </Col>
+                      <Col xs={12} md={4}>
+                        <Ingredients 
+                          alcohol={alcohol} 
+                          onIngredientClick={handleIngredientClick} 
+                        />
+                      </Col>
+                      <Col xs={12} md={4}>
+                        <ProcessSteps 
+                          alcohol={alcohol} 
+                          onStepClick={handleStepClick} 
+                        />
+                      </Col>
+                    </Row>
+                  </Container>
+                </div>
+              </Collapse>
       <StepModal 
         step={selectedStep}
         show={showModal}
