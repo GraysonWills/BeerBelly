@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
+import { Amplify } from 'aws-amplify';
 import LandingPage from './pages/Landing/LandingPage';
 import Home from './pages/Home/Home';
 import HowTo from './pages/How/HowTo';
@@ -9,9 +10,11 @@ import CustomNavbar from './components/Navbar';
 import Footer from './components/Footer';
 import navlinks from './content/navlinks.json';
 import ScrollToTop from './components/ScrollToTop';
+import LoginPage from './pages/Login/LoginPage';
 
 
-// Different animation variants
+
+//Different animation variants
 const pageTransitions = {
   slideUp: {
     initial: { opacity: 0, y: 50 },
@@ -24,8 +27,7 @@ const pageTransitions = {
     animate: { opacity: 1, x: 0 },
     exit: { opacity: 0, x: -100 },
     transition: { duration: 0.4, ease: "easeInOut" }
-  },
-  scale: {
+  },  scale: {
     initial: { opacity: 0, scale: 0.8 },
     animate: { opacity: 1, scale: 1 },
     exit: { opacity: 0, scale: 1.2 },
@@ -66,8 +68,9 @@ const AnimatedRoutes = () => {
     "Find By Taste": <Home />,
     "How To": <HowTo />,
     "Locations": <LocationServices />,
-    "Recipes": <Home />
-  };
+    "Recipes": <Home />,
+    "Login": <LoginPage />
+  }; 
 
   return (
     <AnimatePresence mode="wait">

@@ -1,0 +1,15 @@
+.card {
+    border: none;
+    border-radius: 10px;
+  }
+  
+  .btn-outline-dark:hover {
+    background-color: #f8f9fa;
+    color: #000;
+    border-color: #dee2e6;
+  }
+  
+  .facebook {
+    color: #1877f2;
+  }
+  
