@@ -1,0 +1,49 @@
+.form-control:focus {
+  border-color: #4A3F35;
+  box-shadow: 0 0 0 0.2rem rgba(74, 63, 53, 0.25);
+}
+
+.form-label {
+  text-align: center;
+  display: block;
+}
+  .age-verify-btn {
+    position: relative;
+    background: transparent !important;
+    border: 2px solid #9E4113;
+    color: #9E4113;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .age-verify-btn:hover {
+    border-color: #9E4113 !important;
+  }
+  .age-verify-btn:disabled {
+    border-color: rgba(158, 65, 19, 0.5);
+    color: rgba(158, 65, 19, 0.7);
+  }
+
+  .age-verify-btn:enabled::before {
+    content: '';
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #9E4113;
+    transition: bottom 0.3s ease-in-out;
+    z-index: -1;
+  }
+
+  .age-verify-btn:enabled:hover {
+    color: white;
+  }
+
+  .age-verify-btn:enabled:hover::before {
+    bottom: 0;
+  }
+
+  .age-verify-btn:enabled:active {
+    transform: scale(0.98);
+  }

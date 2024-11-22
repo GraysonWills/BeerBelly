@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import LandingPage from './pages/Landing/LandingPage';
@@ -9,6 +9,8 @@ import CustomNavbar from './components/Navbar';
 import Footer from './components/Footer';
 import navlinks from './content/navlinks.json';
 import ScrollToTop from './components/ScrollToTop';
+import AgeVerificationModal from './components/AgeVerificationModal/AgeVerificationModal';
+import RestrictedPage from './components/RestrictedPage/RestrictedPage';
 
 
 // Different animation variants
@@ -66,7 +68,8 @@ const AnimatedRoutes = () => {
     "Find By Taste": <Home />,
     "How To": <HowTo />,
     "Locations": <LocationServices />,
-    "Recipes": <Home />
+    "Recipes": <Home />,
+    "Restricted": <RestrictedPage />
   };
 
   return (
@@ -96,15 +99,32 @@ const AnimatedRoutes = () => {
   );
 };
 
+
 function App() {
+  const [showAgeModal, setShowAgeModal] = useState(false);
+  const isAgeVerified = localStorage.getItem('isAgeVerified');
+
+  if (!isAgeVerified) {
     return (
-      <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
-        <Router>
-          <ScrollToTop />
-          <CustomNavbar style={{ position: 'sticky', top: 0, zIndex: 1000 }}/>
-          <AnimatedRoutes />
-        </Router>
-      </div>
+      <AgeVerificationModal 
+        show={true}
+        onVerified={() => window.location.reload()}
+      />
     );
   }
+
+  if (isAgeVerified === 'false') {
+    return <RestrictedPage />;
+  }
+
+  return (
+    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <Router>
+        <ScrollToTop />
+        <CustomNavbar style={{ position: 'sticky', top: 0, zIndex: 1000 }}/>
+        <AnimatedRoutes />
+      </Router>
+    </div>
+  );
+}
 export default App;
