@@ -26,7 +26,7 @@ const SearchResults = ({ selectedType, selectedSubTypes, abvRange }) => {
     });
   };
 
-  const itemsPerPage = 15;
+  const itemsPerPage =  window.innerWidth <= 480 ? 10 : 15;
 
   const dummyResults = {
     Beer: [

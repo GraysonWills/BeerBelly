@@ -14,7 +14,7 @@ const CustomNavbar = () => {
 
   return (
     <Navbar expand="lg" className="custom-navbar" sticky="top">
-      <Navbar.Brand as={Link} to="/">
+      {/* <Navbar.Brand as={Link} to="/">
         <img
           src={'/assets/LandingPage/logo.png'}
           alt="Logo"
@@ -22,7 +22,7 @@ const CustomNavbar = () => {
           height="50"
           className="d-inline-block align-top"
         />
-      </Navbar.Brand>
+      </Navbar.Brand> */}
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ms-auto custom-nav-links">

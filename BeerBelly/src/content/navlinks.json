@@ -5,13 +5,13 @@
   "Locations": {
     "link": "/locations"
   },
-    "Find By Taste": {
-      "link": "/find-by-taste"
-    },
-    "How To": {
-      "link": "/how-to"
-    }
-
-
+  "Find By Taste": {
+    "link": "/find-by-taste"
+  },
+  "How To": {
+    "link": "/how-to"
+  },
+  "Login": {
+    "link": "/login"
   }
-  
+}

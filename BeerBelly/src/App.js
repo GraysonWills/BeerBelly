@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
+import { Amplify } from 'aws-amplify';
 import LandingPage from './pages/Landing/LandingPage';
 import Home from './pages/Home/Home';
 import HowTo from './pages/How/HowTo';
@@ -11,9 +12,11 @@ import navlinks from './content/navlinks.json';
 import ScrollToTop from './components/ScrollToTop';
 import AgeVerificationModal from './components/AgeVerificationModal/AgeVerificationModal';
 import RestrictedPage from './components/RestrictedPage/RestrictedPage';
+import LoginPage from './pages/Login/LoginPage';
 
 
-// Different animation variants
+
+//Different animation variants
 const pageTransitions = {
   slideUp: {
     initial: { opacity: 0, y: 50 },
@@ -26,8 +29,7 @@ const pageTransitions = {
     animate: { opacity: 1, x: 0 },
     exit: { opacity: 0, x: -100 },
     transition: { duration: 0.4, ease: "easeInOut" }
-  },
-  scale: {
+  },  scale: {
     initial: { opacity: 0, scale: 0.8 },
     animate: { opacity: 1, scale: 1 },
     exit: { opacity: 0, scale: 1.2 },
@@ -69,8 +71,11 @@ const AnimatedRoutes = () => {
     "How To": <HowTo />,
     "Locations": <LocationServices />,
     "Recipes": <Home />,
-    "Restricted": <RestrictedPage />
+    "Restricted": <RestrictedPage />,
+    "Login": <LoginPage />
   };
+    
+
 
   return (
     <AnimatePresence mode="wait">
@@ -97,8 +102,8 @@ const AnimatedRoutes = () => {
       </Routes>
     </AnimatePresence>
   );
-};
 
+}; 
 
 function App() {
   const [showAgeModal, setShowAgeModal] = useState(false);

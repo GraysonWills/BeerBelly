@@ -5,11 +5,23 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 0 3% !important; /* This adds padding on both sides */
+    padding: 10px 3% !important;
+    width: 100%;
+    min-width: fit-content;
 }
 
-/* Navbar link styling */
+/* Add padding to the navbar collapse content */
+.navbar-collapse {
+    padding: 15px 0;  /* Default padding for mobile */
+}
 
+@media (min-width: 992px) {  /* lg breakpoint in Bootstrap */
+    .navbar-collapse {
+        padding: 0;
+    }
+}
+
+/* Existing styles remain the same */
 .navbar-brand {
     margin-left: 0;
 }

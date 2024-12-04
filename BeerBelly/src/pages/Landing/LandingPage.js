@@ -15,7 +15,7 @@ const LandingPage = () => {
           <InfoCard key={key} descriptor={key} data={data} />
         ))}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

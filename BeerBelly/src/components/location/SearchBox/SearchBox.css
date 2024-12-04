@@ -133,8 +133,25 @@
   .search-box-shifted {
     left: 10px;
   }
-}
 
+  .search-input-group {
+    flex-wrap: wrap;
+  }
+
+  .search-input {
+    width: calc(100% - 40px); /* Leave space for clear button */
+  }
+
+  .search-button,
+  .location-button,
+  .layers-button {
+    flex: 1;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-height: 40px;
+  }
+}
   .layers-dropdown {
     transform: translateY(-10px);
     opacity: 0;

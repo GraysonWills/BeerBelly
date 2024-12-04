@@ -5,7 +5,7 @@ const ErrorMessage = ({ isVisible, message }) => {
   if (!isVisible) return null;
 
   return (
-    <div className="error-message">
+    <div className="error-message-attempt">
       {message}
     </div>
   );
