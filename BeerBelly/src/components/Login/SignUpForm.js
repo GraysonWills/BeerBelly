@@ -72,7 +72,6 @@ const SignUpForm = ({ onBackToLogin, handleOAuthLogin, onSubmit }) => {
         <div className="d-grid gap-2">
           <OAuthButton icon={FcGoogle} provider="Google" onClick={() => handleOAuthLogin('Google')} />
           <OAuthButton icon={FaFacebook} provider="Facebook" onClick={() => handleOAuthLogin('Facebook')} />
-          <OAuthButton icon={FaAmazon} provider="Amazon" onClick={() => handleOAuthLogin('Amazon')} />
         </div>
         <div className="text-center mt-4">
           <span>Already have an account? </span>

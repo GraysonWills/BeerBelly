@@ -13,6 +13,7 @@ import ScrollToTop from './components/ScrollToTop';
 import AgeVerificationModal from './components/AgeVerificationModal/AgeVerificationModal';
 import RestrictedPage from './components/RestrictedPage/RestrictedPage';
 import LoginPage from './pages/Login/LoginPage';
+import { Navigate } from 'react-router-dom';
 
 
 
@@ -50,19 +51,18 @@ const PageTransition = ({ children }) => {
       animate={{ opacity: 1 }}
       exit={{ 
         opacity: 0,
-        transition: { duration: 0.2 },
+        transition: { duration: 0.3 }, // Shortened for snappier response
         onComplete: () => window.scrollTo(0, 0)
       }}
       transition={{ 
-        duration: 0.3,
-        delay: 0.2 // This gives time for the scroll to complete
+        duration: 0.1,
+        delay: 0.4 // This gives time for navbar to close
       }}
     >
       {children}
     </motion.div>
   );
-};
-const AnimatedRoutes = () => {
+};const AnimatedRoutes = () => {
   const location = useLocation();
   
   const pageComponents = {
@@ -74,8 +74,6 @@ const AnimatedRoutes = () => {
     "Restricted": <RestrictedPage />,
     "Login": <LoginPage />
   };
-    
-
 
   return (
     <AnimatePresence mode="wait">
@@ -99,12 +97,11 @@ const AnimatedRoutes = () => {
             } 
           />
         ))}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </AnimatePresence>
   );
-
-}; 
-
+};
 function App() {
   const [showAgeModal, setShowAgeModal] = useState(false);
   const isAgeVerified = localStorage.getItem('isAgeVerified');
@@ -133,3 +130,5 @@ function App() {
   );
 }
 export default App;
+
+

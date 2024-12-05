@@ -10,13 +10,20 @@
     min-width: fit-content;
 }
 
-/* Add padding to the navbar collapse content */
+/* Remove padding from navbar-collapse */
 .navbar-collapse {
-    padding: 15px 0;  /* Default padding for mobile */
+    padding: 0;
 }
 
-@media (min-width: 992px) {  /* lg breakpoint in Bootstrap */
-    .navbar-collapse {
+/* Add padding to the Nav component instead */
+@media (max-width: 991.98px) {
+    .custom-nav-links {
+        padding: 15px 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .custom-nav-links {
         padding: 0;
     }
 }

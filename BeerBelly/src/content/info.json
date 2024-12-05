@@ -1,15 +1,18 @@
 {
     "choose": {
       "description": "Choose a drink we'd think\nyou like based on a selection\nof different filters, such as taste,\nfruitiness and more!",
-      "image": "assets/LandingPage/img/flight.jpg"
+      "image": "assets/LandingPage/img/flight.jpg",
+      "link": "/find-by-taste"
     },
     "locate": {
       "description": "Locate Your Nearest\nBrewery With Our\nState-Of-The-Art\nLocation Service!",
-      "image": "assets/LandingPage/img/single.jpg"
+      "image": "assets/LandingPage/img/single.jpg",
+      "link": "/locations"
     },
     "craft": {
       "description": "Learn How To Craft\nYour Own Delicious\nBeverage",
-      "image": "assets/LandingPage/img/draught.jpg"
+      "image": "assets/LandingPage/img/draught.jpg",
+      "link": "/how-to"
     }
   }
   
