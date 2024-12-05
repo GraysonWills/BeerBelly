@@ -111,3 +111,54 @@
   50% { opacity: 0.5; }
   100% { opacity: 1; }
 }
+
+/* Add these media queries to the existing CSS */
+
+@media screen and (max-width: 768px) {
+  .premium-modal-content {
+    width: 95%;
+    min-height: 500px;
+    padding: 1.5rem;
+  }
+
+  .premium-price-box {
+    height: 200px;
+    padding: 20px 10px;
+  }
+
+  .original-price {
+    font-size: 56px;
+  }
+
+  .free-offer {
+    font-size: 28px;
+  }
+
+  .pulse {
+    font-size: 20px;
+  }
+
+  .countdown {
+    font-size: 16px;
+  }
+
+  .signup-button {
+    padding: 10px 24px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .premium-modal-content {
+    min-height: 400px;
+    padding: 1rem;
+  }
+
+  .original-price {
+    font-size: 48px;
+  }
+
+  .free-offer {
+    font-size: 24px;
+  }
+}
