@@ -10,7 +10,7 @@ const PaymentPopup = ({ isVisible, onClose, onSignUp }) => {
       <div className="popup-overlay" onClick={onClose} />
       <div className="popup-content">
         <h2>Premium Feature</h2>
-        <p>Only paid members are able to utilize this feature. Please register an account for $4.99</p>
+        <p>Only paid members are able to utilize this feature. Please register an account for $1.99</p>
         <Button text="Sign Up!" onClick={onSignUp} />
       </div>
     </div>

@@ -1,0 +1,113 @@
+.premium-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.premium-modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(158, 65, 19, 0.2);
+}
+
+.close-button {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #9E4113;
+}
+
+.premium-modal-content {
+  width: 80%;
+  max-width: 400px;
+  min-height: 600px;
+}
+  .premium-price-box {
+    background: linear-gradient(135deg, #9E4113, #FBB117);
+    margin: 20px auto;
+    height: 300px;
+    padding: 40px 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(251, 177, 23, 0.3);
+  }
+
+  .original-price {
+    font-size: 72px;
+    color: white;
+    text-decoration: line-through;
+    opacity: 0.8;
+    margin-bottom: 20px;
+  }
+
+  .free-offer {
+    font-size: 36px;
+    color: white;
+    font-weight: bold;
+  }
+.signup-button {
+  background: #9E4113;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: background 0.3s;
+}
+
+.signup-button:hover {
+  background: #FBB117;
+}
+
+.maybe-later {
+  background: none;
+  border: none;
+  color: #9E4113;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-top: 10px;
+}
+
+.limited-time {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pulse {
+  color: #9E4113;
+  font-weight: bold;
+  font-size: 24px;
+  animation: pulse 2s infinite;
+}
+
+.countdown {
+  color: #FBB117;
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
